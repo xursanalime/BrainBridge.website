@@ -1216,3 +1216,70 @@ INFO:     Finished server process [28004]
 INFO:     Started server process [28558]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
+[AI] Groq initialized ✓
+INFO:     127.0.0.1:52876 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52876 - "GET /logo.png HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52884 - "GET /css/style.css?v=28 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52890 - "GET /js/app.js?v=28 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52890 - "GET /api/words/stats HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:52884 - "GET /api/uploads/avatars/1cdd284a-48a9-48eb-99b4-eef924dc6e8a.jpg?v=1777536175461 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52890 - "GET /favicon.png?v=28 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52884 - "POST /api/auth/refresh HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET /api/words/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET /api/stats/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52890 - "GET /api/uploads/avatars/1cdd284a-48a9-48eb-99b4-eef924dc6e8a.jpg?v=1777536176420 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET /api/words/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET /api/stats/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52890 - "GET /api/uploads/avatars/1cdd284a-48a9-48eb-99b4-eef924dc6e8a.jpg?v=1777536177257 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET /api/words/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET /api/stats/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52890 - "GET /api/uploads/avatars/1cdd284a-48a9-48eb-99b4-eef924dc6e8a.jpg?v=1777536177474 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET /api/words/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET /api/stats/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52890 - "GET /api/uploads/avatars/1cdd284a-48a9-48eb-99b4-eef924dc6e8a.jpg?v=1777536177631 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET /api/words/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET /api/stats/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52890 - "GET /api/uploads/avatars/1cdd284a-48a9-48eb-99b4-eef924dc6e8a.jpg?v=1777536177792 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET /api/words/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET /api/stats/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52890 - "GET /api/uploads/avatars/1cdd284a-48a9-48eb-99b4-eef924dc6e8a.jpg?v=1777536177940 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET /api/words/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET /api/stats/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52890 - "GET /api/uploads/avatars/1cdd284a-48a9-48eb-99b4-eef924dc6e8a.jpg?v=1777536178185 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET /api/words/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET /api/stats/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52890 - "GET /api/uploads/avatars/1cdd284a-48a9-48eb-99b4-eef924dc6e8a.jpg?v=1777536178348 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET /api/words/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET /api/stats/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52890 - "GET /api/uploads/avatars/1cdd284a-48a9-48eb-99b4-eef924dc6e8a.jpg?v=1777536178525 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET /api/words/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET /api/stats/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52890 - "GET /api/uploads/avatars/1cdd284a-48a9-48eb-99b4-eef924dc6e8a.jpg?v=1777536178678 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET /api/words/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52884 - "GET /api/stats/me HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'db.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [28558]
+INFO:     Started server process [37947]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'db.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [37947]
+INFO:     Started server process [38042]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
