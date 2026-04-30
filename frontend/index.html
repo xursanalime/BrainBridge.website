@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="description" content="BrainBridge — ingliz so'zlarini aqlli takrorlash tizimi orqali tez va oson o'rganing. Leitner kartochkalar usuli bilan."/>
+<title>BrainBridge — So'zlarni Aqlli O'rganing</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+<link rel="icon" type="image/png" href="/favicon.png?v=28">
+<link rel="stylesheet" href="/css/style.css?v=28">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     LANDING PAGE
+════════════════════════════════════════════════ -->
+<div id="landing">
+
+  <!-- Navbar -->
+  <nav class="lnav">
+    <div class="lnav-logo">
+      <div class="lnav-logo-icon"><img src="/logo.png" style="width:32px;height:32px;object-fit:contain" alt="Logo"></div>
+      BrainBridge
+    </div>
+    <div class="lnav-links">
+      <div class="lnav-link" onclick="openAuthPage('login')">Kirish</div>
+      <div class="lnav-cta" onclick="openAuthPage('reg')">Bepul Boshlash →</div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-orb hero-orb1"></div>
+      <div class="hero-orb hero-orb2"></div>
+      <div class="hero-orb hero-orb3"></div>
+    </div>
+    <div style="position:relative;z-index:1;width:100%">
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        Leitner tizimi bilan o'rganing
+      </div>
+      <h1 class="hero-title">
+        So'zlarni<br><span>Aqlli O'rganing</span>
+      </h1>
+      <p class="hero-sub">Ilmiy isbotlangan intervalli takrorlash usuli bilan ingliz so'zlarini qisqa vaqtda xotirangizga mustahkam o'rnatib oling.</p>
+      
+      <div class="hero-visual">
+        <div class="float-card fc1" style="min-width:160px">
+          <div class="fc-word">accomplish</div>
+          <div class="fc-trans">bajarmoq, erishmoq</div>
+          <div class="fc-badge"><img src="/img/emojis/2705.png" class="apple-emoji" alt="✅"> O'rganildi</div>
+        </div>
+        <div class="float-card fc2" style="min-width:160px">
+          <div class="fc-word">persevere</div>
+          <div class="fc-trans">davom ettirmoq</div>
+          <div class="fc-badge"><img src="/img/emojis/1f49c.png" class="apple-emoji" alt="💜"> 3-bosqich</div>
+        </div>
+        <div class="float-card fc3" style="min-width:160px">
+          <div class="fc-word">eloquent</div>
+          <div class="fc-trans">notiqlik qobiliyatli</div>
+          <div class="fc-badge"><img src="/img/emojis/1f534.png" class="apple-emoji" alt="🔴"> 1-bosqich</div>
+        </div>
+      </div>
+
+      <div class="hero-btns">
+        <div class="btn-hero-primary" onclick="openAuthPage('reg')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          Bepul Boshlash
+        </div>
+        <div class="btn-hero-secondary" onclick="openAuthPage('login')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+          Kirish
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><div class="hstat-val">6</div><div class="hstat-lbl">O'rganish bosqichi</div></div>
+        <div class="hstat" style="width:1px;height:40px;background:var(--bd2)"></div>
+        <div class="hstat"><div class="hstat-val">300+</div><div class="hstat-lbl">So'z bir batch da</div></div>
+        <div class="hstat" style="width:1px;height:40px;background:var(--bd2)"></div>
+        <div class="hstat"><div class="hstat-val">∞</div><div class="hstat-lbl">Bepul imkoniyatlar</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <div id="features" style="background:var(--bg2);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)">
+    <div class="section">
+      <div class="sec-head">
+        <div class="sec-tag">Imkoniyatlar</div>
+        <h2 class="sec-title">So'z o'rganishni o'yinga aylantiring</h2>
+        <p class="sec-sub">Har bir xususiyat sizning o'rganish jarayoningizni yanada samarali va qiziqarli qilish uchun yaratilgan.</p>
+      </div>
+      <div class="feat-grid">
+        <div class="feat-card">
+          <div class="feat-icon" style="background:rgba(124,92,252,.15);color:#9b7dff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997-.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997-.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg></div>
+          <div class="feat-title">Leitner Algoritmi</div>
+          <div class="feat-desc">Ilmiy isbotlangan 6 qutili Leitner tizimi — bilgan so'zlaringizni kamroq, yangi so'zlaringizni ko'proq takrorlaydi.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon" style="background:rgba(0,212,255,.1);color:#00d4ff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <div class="feat-title">Ommaviy Qo'shish</div>
+          <div class="feat-desc">Bir vaqtda 300 ta so'z qo'shing. Oddiy format: <code style="background:var(--bg3);padding:2px 6px;border-radius:4px;font-family:monospace;font-size:12px">inglizcha - o'zbekcha</code></div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon" style="background:rgba(0,229,160,.1);color:#00e5a0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg></div>
+          <div class="feat-title">Ikki Turdagi Test</div>
+          <div class="feat-desc">Yozish testi (so'zni o'zingiz yozasiz) va Quiz testi (4 ta variant ichidan tanlaysiz) — ikki yo'nalishda ham.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon" style="background:rgba(255,77,109,.1);color:#ff4d6d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 3z"/></svg></div>
+          <div class="feat-title">Streak Tizimi</div>
+          <div class="feat-desc">Har kuni o'rganib borish odat hosil qiladi. Streak tizimi sizni motivatsiyali ushlab turadi.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon" style="background:rgba(255,184,77,.1);color:#ffb84d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg></div>
+          <div class="feat-title">Batafsil Statistika</div>
+          <div class="feat-desc">Dashboard — har bir bosqichdagi so'zlar soni, bugun takrorlash keraklar va o'rganilganlar foizi.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon" style="background:rgba(168,85,247,.1);color:#c084fc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1" fill="currentColor"/></svg></div>
+          <div class="feat-title">Google bilan Kirish</div>
+          <div class="feat-desc">Google akkauntingiz orqali bir bosimda kirish. Brute-force himoya bilan kuchli xavfsizlik.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEW FEATURES SHOWCASE -->
+  <div style="background:linear-gradient(180deg,var(--bg) 0%,rgba(124,92,252,.05) 100%);border-top:1px solid var(--bd);padding:60px 0">
+    <div class="section">
+      <div class="sec-head">
+        <div class="sec-tag" style="background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(124,92,252,.15));color:#00d4ff;border-color:rgba(0,212,255,.3)">Yangi Funksiyalar</div>
+        <h2 class="sec-title">Endi yanada kuchliroq</h2>
+        <p class="sec-sub">Spelling mashqi, AI yordamchi va boshqa xususiyatlar bilan ingliz tilini yanada samarali o'rganing.</p>
+      </div>
+      <div class="nf-grid">
+
+        <!-- Spelling Card -->
+        <div class="nf-card" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(0,229,160,.5)'" onmouseout="this.style.transform='';this.style.borderColor='var(--bd2)'">
+          <div class="nf-glow" style="background:radial-gradient(circle,rgba(0,229,160,.1) 0%,transparent 70%)"></div>
+          <div class="nf-icon" style="background:linear-gradient(135deg,rgba(0,229,160,.2),rgba(0,212,255,.1))">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+          </div>
+          <div class="nf-head">
+            <div class="nf-title">Spelling Mashqi</div>
+            <span class="nf-badge" style="background:linear-gradient(135deg,#00e5a0,#00d4ff);color:#000">YANGI</span>
+          </div>
+          <p class="nf-desc">So'zni ingliz tilida tinglang va harflab yozing. American va British aksent, yurakcha tizimi bilan.</p>
+          <div class="nf-tags">
+            <span class="nf-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Audio</span>
+            <span class="nf-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ff4d6d" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> 3 yurak</span>
+            <span class="nf-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg> Streak</span>
+          </div>
+        </div>
+
+        <!-- BrainBot Card -->
+        <div class="nf-card" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(124,92,252,.6)'" onmouseout="this.style.transform='';this.style.borderColor='var(--bd2)'">
+          <div class="nf-glow" style="background:radial-gradient(circle,rgba(124,92,252,.1) 0%,transparent 70%)"></div>
+          <div class="nf-icon" style="background:linear-gradient(135deg,rgba(124,92,252,.2),rgba(0,212,255,.1))">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9b7dff" stroke-width="2"><path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10a9.96 9.96 0 0 1-5.08-1.38L2 22l1.38-4.92A9.96 9.96 0 0 1 2 12 10 10 0 0 1 12 2z"/><path d="M8 10h8M8 14h5"/></svg>
+          </div>
+          <div class="nf-head">
+            <div class="nf-title">BrainBot AI</div>
+            <span class="nf-badge" style="background:linear-gradient(135deg,#7c5cfc,#00d4ff);color:#fff">AI</span>
+          </div>
+          <p class="nf-desc">Grammar, writing tekshirish, idioma tahlili, rasm orqali so'z qo'shish — hammasi bir joyda.</p>
+          <div class="nf-tags">
+            <span class="nf-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Writing</span>
+            <span class="nf-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> Grammar</span>
+            <span class="nf-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> Rasm</span>
+          </div>
+        </div>
+
+        <!-- Gap Tuzish Card -->
+        <div class="nf-card" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(255,184,77,.5)'" onmouseout="this.style.transform='';this.style.borderColor='var(--bd2)'">
+          <div class="nf-glow" style="background:radial-gradient(circle,rgba(255,184,77,.1) 0%,transparent 70%)"></div>
+          <div class="nf-icon" style="background:linear-gradient(135deg,rgba(255,184,77,.2),rgba(255,77,109,.1))">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffb84d" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h8M8 14h5"/></svg>
+          </div>
+          <div class="nf-head">
+            <div class="nf-title">Gap Tuzish AI</div>
+            <span class="nf-badge" style="background:linear-gradient(135deg,#ffb84d,#ff4d6d);color:#fff">AI</span>
+          </div>
+          <p class="nf-desc">So'zlaringiz bilan inglizcha gap tuzing. AI to'g'riligini tekshirib, xatolarni tushuntiradi.</p>
+          <div class="nf-tags">
+            <span class="nf-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg> Leitner</span>
+            <span class="nf-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Feedback</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- How It Works -->
+  <div id="howitworks">
+    <div class="section">
+      <div class="sec-head">
+        <div class="sec-tag">Qanday Ishlaydi</div>
+        <h2 class="sec-title">3 ta qadam, cheksiz natija</h2>
+        <p class="sec-sub">BrainBridge ni ishlatish nihoyatda oddiy. Bir necha daqiqada o'rganishni boshlang.</p>
+      </div>
+      <div class="how-wrap">
+        <div class="how-steps">
+          <div class="how-step">
+            <div class="how-num">1</div>
+            <div class="how-info">
+              <div class="how-st">So'zlarni qo'shing</div>
+              <div class="how-sd">english - o'zbek formatida so'zlaringizni qo'shing. CSV, to'g'ridan-to'g'ri yozish — hammasi qulaydir.</div>
+            </div>
+          </div>
+          <div class="how-step">
+            <div class="how-num">2</div>
+            <div class="how-info">
+              <div class="how-st">Test qiling</div>
+              <div class="how-sd">Yozish yoki Quiz rejimida so'zlarni sinab ko'ring. To'g'ri javob — yuqori bosqichga, noto'g'ri — qaytish.</div>
+            </div>
+          </div>
+          <div class="how-step">
+            <div class="how-num">3</div>
+            <div class="how-info">
+              <div class="how-st">Takrorlang va o'rganing</div>
+              <div class="how-sd">Har kuni eslatma olasiz. 30 kun ichida so'z 5-bosqichga yetsa — o'rganildi deb belgilanadi!</div>
+            </div>
+          </div>
+        </div>
+        <div class="how-visual">
+          <div style="font-size:12px;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px">Leitner Bosqichlari</div>
+          <div class="box-visual-row">
+            <div class="bvr-item"><div class="bvr-n" style="color:#8888b8"><img src="/img/emojis/1f331.png" class="apple-emoji" alt="🌱"></div><div class="bvr-l">Yangi</div><div style="font-size:10px;color:var(--tx3);margin-top:4px">0 kun</div></div>
+            <div class="bvr-item"><div class="bvr-n" style="color:#ff4d6d"><img src="/img/emojis/1f534.png" class="apple-emoji" alt="🔴"></div><div class="bvr-l">1-boss.</div><div style="font-size:10px;color:var(--tx3);margin-top:4px">1 kun</div></div>
+            <div class="bvr-item"><div class="bvr-n" style="color:#ffb84d"><img src="/img/emojis/1f534.png" class="apple-emoji" alt="🔴"></div><div class="bvr-l">2-boss.</div><div style="font-size:10px;color:var(--tx3);margin-top:4px">3 kun</div></div>
+          </div>
+          <div class="box-visual-row">
+            <div class="bvr-item"><div class="bvr-n" style="color:#7c5cfc"><img src="/img/emojis/1f49c.png" class="apple-emoji" alt="💜"></div><div class="bvr-l">3-boss.</div><div style="font-size:10px;color:var(--tx3);margin-top:4px">7 kun</div></div>
+            <div class="bvr-item"><div class="bvr-n" style="color:#c084fc"><img src="/img/emojis/1f31f.png" class="apple-emoji" alt="🌟"></div><div class="bvr-l">4-boss.</div><div style="font-size:10px;color:var(--tx3);margin-top:4px">14 kun</div></div>
+            <div class="bvr-item"><div class="bvr-n" style="color:#00e5a0"><img src="/img/emojis/2705.png" class="apple-emoji" alt="✅"></div><div class="bvr-l">O'rganildi</div><div style="font-size:10px;color:var(--tx3);margin-top:4px">30 kun</div></div>
+          </div>
+          <div style="margin-top:16px;padding:14px;background:rgba(0,229,160,.06);border:1px solid rgba(0,229,160,.2);border-radius:12px;font-size:12px;color:#00e5a0;line-height:1.6;font-weight:500">
+            <img src="/img/emojis/2705.png" class="apple-emoji" alt="✅"> <strong>To'g'ri javob</strong> → keyingi bosqich<br>
+            ↩ <strong>Noto'g'ri javob</strong> → 1-bosqichga qaytadi
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div style="padding:60px 5vw">
+    <div class="cta-wrap" style="max-width:1100px;margin:0 auto">
+      <div style="font-size:52px;margin-bottom:16px"><img src="/img/emojis/1f680.png" class="apple-emoji" alt="🚀"></div>
+      <h2 class="cta-title">Bugundan boshlang!</h2>
+      <p class="cta-sub">Minglab o'quvchilar bilan qo'shiling va ingliz so'zlarini professional darajada o'rganing.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+        <div class="btn-hero-primary" onclick="openAuthPage('reg')">
+          Bepul Ro'yxatdan O'tish →
+        </div>
+        <div class="btn-hero-secondary" onclick="openAuthPage('login')">
+          Kirish
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-logo">
+      <div class="footer-logo-icon"><img src="/img/emojis/1f9e0.png" class="apple-emoji" alt="🧠"></div>
+      BrainBridge
+    </div>
+    <div class="footer-copy">© 2025 BrainBridge. Barcha huquqlar himoyalangan.</div>
+    <div style="font-size:13px;color:var(--tx3)">Leitner tizimi bilan o'rganing</div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     AUTH PAGE
+════════════════════════════════════════════════ -->
+<div id="auth">
+  <div class="auth-card">
+    <div class="auth-back" onclick="showLanding()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      Bosh sahifaga qaytish
+    </div>
+
+    <!-- Panel: Login / Register -->
+    <div id="panel-login">
+      <div class="auth-logo-wrap">
+        <div class="auth-logo-icon"><img src="/img/emojis/1f9e0.png" class="apple-emoji" alt="🧠"></div>
+        <div class="auth-logo">BrainBridge</div>
+      </div>
+      <div class="auth-sub">So'zlarni aqlli o'rganing</div>
+      <div class="tabs">
+        <button class="tab on" onclick="authTab('login')">Kirish</button>
+        <button class="tab" onclick="authTab('reg')">Ro'yxat</button>
+      </div>
+      <!-- Google OAuth -->
+      <a href="/api/auth/google/redirect" class="btn-google">
+        <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.14 0 5.95 1.08 8.17 2.86l6.09-6.09C34.46 3.04 29.5 1 24 1 14.82 1 7.01 6.48 3.56 14.24l7.1 5.52C12.38 13.34 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.52 24.5c0-1.56-.14-3.06-.4-4.5H24v9h12.67c-.55 2.96-2.2 5.46-4.67 7.14l7.18 5.57C43.16 38.04 46.52 31.74 46.52 24.5z"/><path fill="#FBBC05" d="M10.66 28.24A14.56 14.56 0 0 1 9.5 24c0-1.48.25-2.9.66-4.24l-7.1-5.52A23.94 23.94 0 0 0 0 24c0 3.82.92 7.44 2.56 10.64l8.1-6.4z"/><path fill="#34A853" d="M24 47c5.5 0 10.12-1.82 13.48-4.94l-7.18-5.57C28.54 37.9 26.38 38.5 24 38.5c-6.26 0-11.62-3.84-13.34-9.26l-8.1 6.4C6.01 41.52 13.82 47 24 47z"/></svg>
+        Google bilan kirish
+      </a>
+      <div class="or-sep">yoki</div>
+      <div id="lf">
+        <div class="fld"><label class="lbl">Email</label><input class="inp" type="email" id="l-e" placeholder="email@example.com" autocomplete="email"/></div>
+        <div class="fld">
+          <label class="lbl">Parol</label>
+          <div class="pass-grp">
+            <input class="inp with-toggle" type="password" id="l-p" placeholder="••••••" autocomplete="current-password"/>
+            <div class="pass-toggle" onclick="togglePass('l-p',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          </div>
+        </div>
+        <button class="btn-grad" id="l-btn" onclick="doLogin()">Kirish</button>
+        <div style="text-align:right;margin-top:10px"><a href="#" style="font-size:12px;color:var(--p2);text-decoration:none;font-weight:600" onclick="openForgot();return false">Parolni unutdim?</a></div>
+      </div>
+      <div id="rf" style="display:none">
+        <div class="fld"><label class="lbl">Email</label><input class="inp" type="email" id="r-e" placeholder="email@example.com" autocomplete="email"/></div>
+        <div class="fld">
+          <label class="lbl">Parol (Kamida 8 belgi)</label>
+          <div class="pass-grp">
+            <input class="inp with-toggle" type="password" id="r-p" placeholder="••••••••" autocomplete="new-password"/>
+            <div class="pass-toggle" onclick="togglePass('r-p',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          </div>
+        </div>
+        <div class="fld">
+          <label class="lbl">Parolni takrorlang</label>
+          <div class="pass-grp">
+            <input class="inp with-toggle" type="password" id="r-p2" placeholder="••••••••" autocomplete="new-password"/>
+            <div class="pass-toggle" onclick="togglePass('r-p2',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          </div>
+        </div>
+        <button class="btn-grad" id="r-btn" onclick="doReg()">Ro'yxatdan o'tish</button>
+      </div>
+      <div class="a-err" id="a-err"></div>
+    </div>
+
+    <!-- Panel: Forgot password -->
+    <div id="panel-forgot" style="display:none">
+      <div style="margin-bottom:20px">
+        <div style="font-size:18px;font-weight:800;color:var(--tx);margin-bottom:6px">Parolni tiklash</div>
+        <div style="font-size:13px;color:var(--tx3)">Email manzilingizni kiriting, tiklash havolasini yuboramiz.</div>
+      </div>
+      <div class="fld"><label class="lbl">Email</label><input class="inp" type="email" id="fg-e" placeholder="email@example.com" autocomplete="email"/></div>
+      <button class="btn-grad" id="fg-btn" onclick="doForgot()" style="margin-top:16px">Havola yuborish</button>
+      <div class="a-err" id="fg-err" style="min-height:16px;margin-top:8px"></div>
+      <div style="text-align:center;margin-top:12px"><a href="#" style="font-size:12px;color:var(--p2);text-decoration:none;font-weight:600" onclick="openLoginPanel();return false">← Kirishga qaytish</a></div>
+    </div>
+
+    <!-- Panel: Reset password -->
+    <div id="panel-reset" style="display:none">
+      <div style="margin-bottom:20px">
+        <div style="font-size:18px;font-weight:800;color:var(--tx);margin-bottom:6px">Yangi parol o'rnating</div>
+        <div style="font-size:13px;color:var(--tx3)">Xavfsiz yangi parol kiriting.</div>
+      </div>
+      <div class="fld"><label class="lbl">Yangi parol</label><input class="inp" type="password" id="rp-new" placeholder="Kamida 8 belgi" autocomplete="new-password"/></div>
+      <div class="fld" style="margin-top:10px"><label class="lbl">Parolni tasdiqlang</label><input class="inp" type="password" id="rp-con" placeholder="Yangi parolni takrorlang" autocomplete="new-password"/></div>
+      <button class="btn-grad" id="rp-btn" onclick="doResetPassword()" style="margin-top:16px">Parolni saqlash</button>
+      <div class="a-err" id="rp-err" style="min-height:16px;margin-top:8px"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     APP
+════════════════════════════════════════════════ -->
+<div id="app">
+  <header class="hdr">
+    <div class="hdr-left">
+      <div class="hdr-logo-icon"><img src="/img/emojis/1f9e0.png" class="apple-emoji" alt="🧠"></div>
+      <div class="hdr-logo">BrainBridge</div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:10px">
+      <div class="hdr-notif">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+      </div>
+      <div class="avatar" id="m-av"></div>
+    </div>
+  </header>
+
+  <nav class="sb">
+    <div class="sb-logo-row">
+      <div class="sb-logo-icon"><img src="/logo.png" style="width:32px;height:32px;object-fit:contain" alt="Logo"></div>
+      <div class="sb-logo">BrainBridge</div>
+    </div>
+
+    <div class="sb-sec">Asosiy</div>
+    <button class="nav on" data-p="dash" onclick="go('dash')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Dashboard
+    </button>
+    <div class="sb-sec" style="margin-top:8px">So'zlar</div>
+    <button class="nav" data-p="add" onclick="go('add')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>So'z Qo'shish
+    </button>
+    <button class="nav" data-p="mywords" onclick="go('mywords')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>So'zlarim
+    </button>
+    <button class="nav" data-p="learn" onclick="go('learn')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>O'rganish
+    </button>
+    <button class="nav" data-p="sentences" onclick="go('sentences')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Gap Tuzish <span id="sb-ai-badge" style="margin-left:auto;font-size:9px;background:linear-gradient(135deg,#7c5cfc,#00d4ff);color:#fff;padding:2px 6px;border-radius:99px;font-weight:800">AI</span>
+    </button>
+    <button class="nav" data-p="spelling" onclick="go('spelling')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Spelling Mashqi
+    </button>
+    <button class="nav" data-p="stats" onclick="go('stats')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>Statistika
+    </button>
+    <button class="nav" data-p="aichat" onclick="go('aichat')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10a9.96 9.96 0 0 1-5.08-1.38L2 22l1.38-4.92A9.96 9.96 0 0 1 2 12 10 10 0 0 1 12 2z"/><path d="M8 10h8M8 14h5"/></svg>BrainBot <span style="margin-left:auto;font-size:9px;background:linear-gradient(135deg,#00d4ff,#7c5cfc);color:#fff;padding:2px 6px;border-radius:99px;font-weight:800">AI</span>
+    </button>
+
+    <div class="sb-foot">
+      <button class="nav" data-p="profile" onclick="go('profile')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Profil
+      </button>
+      <div class="u-row">
+        <div class="avatar" id="sb-av" style="width:32px;height:32px;font-size:12px"></div>
+        <div class="u-info">
+          <div class="u-email" id="sb-em"></div>
+          <div class="u-role">O'quvchi</div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="bnav">
+    <button class="bni" data-p="dash" onclick="go('dash')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+      <div class="bni-dot"></div><div class="bni-label">Bosh</div>
+    </button>
+    <button class="bni" data-p="learn" onclick="go('learn')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      <div class="bni-dot"></div><div class="bni-label">O'rganish</div>
+    </button>
+    <button class="bni bni-add" onclick="go('add')">
+      <div class="bni-add-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+    </button>
+    <button class="bni" data-p="stats" onclick="go('stats')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+      <div class="bni-dot"></div><div class="bni-label">Statistika</div>
+    </button>
+    <button class="bni" onclick="toggleMenu(true)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <div class="bni-label">Menyu</div>
+    </button>
+  </nav>
+
+  <!-- MOBILE MORE MENU -->
+  <div class="modal-bg" id="mob-menu-bg" onclick="toggleMenu(false)">
+    <div class="modal mob-menu" onclick="event.stopPropagation()">
+      <div class="m-title">Barcha bo'limlar</div>
+      <div class="mob-menu-grid">
+        <div class="m-item" onclick="go('mywords');toggleMenu(false)">
+          <div class="m-item-icon"><img src="/img/emojis/1f4da.png" class="apple-emoji" alt="📚"></div>
+          <div class="m-item-label">So'zlarim</div>
+        </div>
+        <div class="m-item" onclick="go('sentences');toggleMenu(false)">
+          <div class="m-item-icon"><img src="/img/emojis/1f916.png" class="apple-emoji" alt="🤖"></div>
+          <div class="m-item-label">Gap AI</div>
+        </div>
+        <div class="m-item" onclick="go('spelling');toggleMenu(false)">
+          <div class="m-item-icon"><img src="/img/emojis/270d-fe0f.png" class="apple-emoji" alt="✍">️</div>
+          <div class="m-item-label">Spelling</div>
+        </div>
+        <div class="m-item" onclick="go('aichat');toggleMenu(false)">
+          <div class="m-item-icon"><img src="/img/emojis/1f916.png" class="apple-emoji" alt="🤖"></div>
+          <div class="m-item-label">BrainBot</div>
+        </div>
+        <div class="m-item" onclick="go('profile');toggleMenu(false)">
+          <div class="m-item-icon"><img src="/img/emojis/1f464.png" class="apple-emoji" alt="👤"></div>
+          <div class="m-item-label">Profil</div>
+        </div>
+      </div>
+      <button class="btn btn-ghost" style="width:100%; margin-top:20px" onclick="toggleMenu(false)">Yopish</button>
+    </div>
+  </div>
+
+  <main class="main">
+    <!-- DASHBOARD -->
+    <div class="page on" id="p-dash">
+      <div class="ph">
+        <div class="ph-greeting" id="ph-greeting">Xush kelibsiz <img src="/img/emojis/1f44b.png" class="apple-emoji" alt="👋"></div>
+        <div class="ph-title">Bugungi Natijangiz</div>
+        <div class="ph-sub" id="ph-date"></div>
+      </div>
+      <div class="progress-banner" id="progress-banner">
+        <div>
+          <div class="pb-title">Jami So'zlar</div>
+          <div class="pb-val" id="pb-score">0</div>
+          <div class="pb-sub">so'z o'rganilmoqda</div>
+        </div>
+        <div class="pb-circle">
+          <svg viewBox="0 0 86 86">
+            <circle cx="43" cy="43" r="36" fill="none" stroke="rgba(124,92,252,.15)" stroke-width="6"/>
+            <circle cx="43" cy="43" r="36" fill="none" stroke="url(#grad-arc)" stroke-width="6" stroke-linecap="round" stroke-dasharray="226" id="pb-arc" stroke-dashoffset="226"/>
+            <defs><linearGradient id="grad-arc" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#7c5cfc"/><stop offset="100%" stop-color="#00d4ff"/></linearGradient></defs>
+          </svg>
+          <div class="pb-circle-num" id="pb-pct">0%</div>
+        </div>
+      </div>
+      
+      <div id="daily-quests" style="margin-top:20px;background:var(--bg2);border:1px solid var(--bd);border-radius:20px;padding:20px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px">
+          <div style="font-weight:800;font-size:16px;color:var(--tx);display:flex;align-items:center;gap:10px">
+            Kundalik Vazifalar
+            <button onclick="openEditGoals()" class="btn-icon-mini" title="Maqsadlarni tahrirlash">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
+            </button>
+          </div>
+          <div style="font-size:12px;color:var(--p);font-weight:600">Bugun: <span id="quest-date"></span></div>
+        </div>
+        <div id="quests-list" style="display:grid;gap:12px"></div>
+      </div>
+
+      <div id="due-wrap"></div>
+      <div class="stat-grid" id="stat-grid"></div>
+      <div class="divider">
+        <div class="section-header">
+          <div class="sec-title2">Bosqichlar bo'yicha</div>
+          <div class="sec-link" onclick="go('learn')">O'rganish →</div>
+        </div>
+        <div class="box-dash" id="box-dash"></div>
+      </div>
+      <!-- NEW FEATURES SECTION -->
+      <div class="divider" style="margin-top:8px">
+        <div class="section-header">
+          <div class="sec-title2">Yangi Funksiyalar</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <!-- Spelling card -->
+          <div onclick="go('spelling')" style="background:var(--bg2);border:1px solid var(--bd2);border-radius:16px;padding:16px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden" onmouseover="this.style.borderColor='var(--p)'" onmouseout="this.style.borderColor='var(--bd2)'">
+            <div style="position:absolute;top:0;right:0;width:70px;height:70px;background:linear-gradient(135deg,rgba(124,92,252,.15),rgba(0,212,255,.1));border-radius:0 16px 0 70px"></div>
+            <div style="margin-bottom:10px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></div>
+            <div style="font-weight:800;font-size:14px;color:var(--tx);margin-bottom:3px">Spelling Mashqi</div>
+            <div style="font-size:11px;color:var(--tx3);line-height:1.4">So'zni eshit va harflab yoz</div>
+            <div style="margin-top:10px;display:flex;align-items:center;gap:4px">
+              <span style="font-size:10px;background:linear-gradient(135deg,#00e5a0,#00d4ff);color:#000;padding:2px 8px;border-radius:99px;font-weight:800">YANGI</span>
+              <span style="font-size:10px;color:var(--tx3)">US + GB aksent</span>
+            </div>
+          </div>
+          <!-- BrainBot card -->
+          <div onclick="go('aichat')" style="background:var(--bg2);border:1px solid var(--bd2);border-radius:16px;padding:16px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden" onmouseover="this.style.borderColor='var(--p)'" onmouseout="this.style.borderColor='var(--bd2)'">
+            <div style="position:absolute;top:0;right:0;width:70px;height:70px;background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(124,92,252,.1));border-radius:0 16px 0 70px"></div>
+            <div style="margin-bottom:10px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9b7dff" stroke-width="2"><path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10a9.96 9.96 0 0 1-5.08-1.38L2 22l1.38-4.92A9.96 9.96 0 0 1 2 12 10 10 0 0 1 12 2z"/><path d="M8 10h8M8 14h5"/></svg></div>
+            <div style="font-weight:800;font-size:14px;color:var(--tx);margin-bottom:3px">BrainBot AI</div>
+            <div style="font-size:11px;color:var(--tx3);line-height:1.4">Grammar, writing, idioma tahlili</div>
+            <div style="margin-top:10px;display:flex;align-items:center;gap:4px">
+              <span style="font-size:10px;background:linear-gradient(135deg,#00d4ff,#7c5cfc);color:#fff;padding:2px 8px;border-radius:99px;font-weight:800">AI</span>
+              <span style="font-size:10px;color:var(--tx3)">Ilg'or AI yordamchi</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADD -->
+    <div class="page" id="p-add">
+      <div class="ph">
+        <div class="ph-title">So'z Qo'shish</div>
+        <div class="ph-sub">Inglizcha → O'zbekcha</div>
+      </div>
+      <div style="max-width:600px">
+        <div class="add-tabs">
+          <button class="add-tab on" onclick="addTab('bulk')">Ko'plab (max 300)</button>
+          <button class="add-tab" onclick="addTab('single')">Bitta qo'shish</button>
+        </div>
+        <div id="bulk-a">
+          <div class="hint"><strong>Format:</strong> <code>inglizcha - o'zbekcha</code> yoki <code>inglizcha-o'zbekcha</code><br><code>hello - salom</code> &nbsp; <code>run-yugurmoq</code> &nbsp; <code>jump - sakramoq</code></div>
+          <textarea class="textarea" id="bulk-inp" placeholder="hello - salom&#10;run - yugurmoq&#10;apple - olma&#10;study - o'qimoq"></textarea>
+          <div class="row-bw">
+            <span style="font-size:12px;color:var(--tx3);font-weight:600" id="bulk-cnt">0 ta juft</span>
+            <button class="btn btn-blue" onclick="doBulk()" id="bulk-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Qo'shish
+            </button>
+          </div>
+          <div id="bulk-res"></div>
+        </div>
+        <div id="single-a" style="display:none">
+          <div class="fld"><label class="lbl">Inglizcha</label><input class="inp" type="text" id="s-en" placeholder="hello" autocomplete="off"/></div>
+          <div class="fld" style="margin-top:14px"><label class="lbl">O'zbekcha</label><input class="inp" type="text" id="s-uz" placeholder="salom" autocomplete="off"/></div>
+          <button class="btn btn-blue" onclick="doSingle()" id="single-btn" style="margin-top:16px;width:100%">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Qo'shish
+          </button>
+          <div id="single-res"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MY WORDS -->
+    <div class="page" id="p-mywords">
+      <div class="ph">
+        <div class="ph-title">So'zlarim</div>
+        <div class="ph-sub">Barcha qo'shilgan so'zlar</div>
+      </div>
+      <div class="toolbar">
+        <div class="srch">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input class="inp" id="w-s" placeholder="Qidirish..." oninput="loadWords()" style="padding-left:38px"/>
+        </div>
+        <select class="sel" id="w-b" onchange="loadWords()"><option value="">Hammasi</option><option value="0">Yangi</option><option value="1">1-bosqich</option><option value="2">2-bosqich</option><option value="3">3-bosqich</option><option value="4">4-bosqich</option><option value="5">O'rganildi</option></select>
+        <select class="sel" id="w-o" onchange="loadWords()"><option value="date">Sana</option><option value="box">Bosqich</option></select>
+      </div>
+      <div id="wlist" class="wlist"></div>
+    </div>
+
+    <!-- LEARN -->
+    <div class="page" id="p-learn">
+      <div class="ph">
+        <div class="ph-title">O'rganish</div>
+        <div class="ph-sub">Bosqich tanlang</div>
+      </div>
+      <div id="p-boxes" class="box-grid"></div>
+      <div id="p-inner" style="display:none">
+        <div class="back-row">
+          <button class="btn btn-ghost" style="padding:9px 18px" onclick="backToBoxes()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            Orqaga
+          </button>
+          <div>
+            <div style="font-size:18px;font-weight:800;color:var(--tx);letter-spacing:-.3px" id="inner-t"></div>
+            <div style="font-size:12px;color:var(--tx3)" id="inner-s"></div>
+          </div>
+        </div>
+        <div class="test-btns" id="test-btns">
+          <button class="btn btn-blue" id="btn-w" onclick="startTest('write')"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg> Yozish Testi</button>
+          <button class="btn btn-qz" id="btn-q" onclick="startTest('quiz')"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg> Quiz Test</button>
+        </div>
+        <div id="test-a" style="display:none">
+          <div class="twrap">
+            <div class="tcard">
+              <div class="prog"><div class="prog-f" id="t-prog" style="width:0%"></div></div>
+              <div class="t-meta" id="t-meta"></div>
+              <div class="t-prompt" id="t-prompt"></div>
+              <div class="t-hint" id="t-hint"></div>
+              <div id="t-write">
+                <input class="t-inp" id="t-inp" placeholder="Inglizcha so'zini yozing..." onkeydown="tKey(event)" autocomplete="off" spellcheck="false"/>
+                <button class="btn btn-blue" onclick="checkWrite()" style="width:100%;margin-top:12px" id="t-check-btn">Tekshirish ↵</button>
+              </div>
+              <div id="t-quiz" style="display:none"><div class="qgrid" id="t-opts"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SENTENCES -->
+    <div class="page" id="p-sentences">
+      <div class="ph">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+          <div class="ph-title" style="margin:0">Gap Tuzish</div>
+          <span style="font-size:11px;background:var(--grad);color:#fff;padding:3px 10px;border-radius:99px;font-weight:800">AI</span>
+        </div>
+        <div class="ph-sub">Har bir so'zga 2 ta inglizcha gap tuzing</div>
+      </div>
+
+      <!-- Sentence boxes overview -->
+      <div id="sent-boxes-wrap" class="divider" style="margin-bottom:20px">
+        <div class="section-header"><div class="sec-title2">Gap Tuzish Bosqichlari</div><div class="sec-link" id="sent-due-lnk"></div></div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px" id="sent-boxes"></div>
+      </div>
+
+      <!-- Session area -->
+      <div id="sent-session" style="display:none;max-width:580px">
+        <!-- Progress bar -->
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px">
+          <button class="btn btn-ghost" style="padding:8px 14px;flex-shrink:0" onclick="endSentSession()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            Orqaga
+          </button>
+          <div style="flex:1">
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--tx3);margin-bottom:4px;font-weight:600">
+              <span id="sent-prog-txt"></span>
+              <span id="sent-box-lbl" style="color:var(--p2)"></span>
+            </div>
+            <div class="prog"><div class="prog-f" id="sent-prog" style="width:0%"></div></div>
+          </div>
+        </div>
+
+        <!-- Word card -->
+        <div class="tcard" style="margin-bottom:16px">
+          <div style="font-size:11px;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px" id="sent-gap-num">Gap 1/2</div>
+          <div style="font-size:clamp(28px,6vw,42px);font-weight:900;color:var(--tx);letter-spacing:-.5px;margin-bottom:4px" id="sent-word"></div>
+          <div style="font-size:15px;color:var(--tx3);margin-bottom:12px" id="sent-trans"></div>
+          <div style="font-size:12px;color:var(--tx2);line-height:1.6;background:rgba(124,92,252,.06);border:1px solid rgba(124,92,252,.15);border-radius:10px;padding:10px 14px">
+            Ushbu so'zni ishlatib inglizcha gap yozing.
+          </div>
+        </div>
+
+        <!-- Input -->
+        <div id="sent-input-wrap">
+          <textarea class="textarea" id="sent-inp" rows="3"
+            id="sent-inp"
+            style="min-height:90px;resize:none;font-family:inherit;font-size:15px"
+            onkeydown="sentKey(event)"></textarea>
+          <div style="display:flex;gap:10px;margin-top:10px">
+            <button class="btn btn-blue" id="sent-check-btn" onclick="doSentCheck()" style="flex:1">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Tekshirish
+            </button>
+            <button class="btn btn-danger" onclick="confirmSentSkip()" style="padding:10px 16px" title="Skip — 1-qutiga qaytadi">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="13 17 18 12 13 7"/><polyline points="6 17 11 12 6 7"/></svg>
+              Skip
+            </button>
+          </div>
+        </div>
+
+        <!-- AI Feedback -->
+        <div id="sent-feedback" style="display:none;margin-top:14px">
+          <!-- filled by JS -->
+        </div>
+
+        <!-- Next button (shown after feedback) -->
+        <button class="btn btn-blue" id="sent-next-btn" style="display:none;width:100%;margin-top:12px" onclick="nextSentWord()">
+          Davom etish →
+        </button>
+      </div>
+
+      <!-- Empty state -->
+      <div id="sent-empty" style="display:none">
+        <div class="empty">
+          <div class="empty-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--tx3)" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div class="empty-t">Gap tuzish uchun so'z yo'q</div>
+          <div class="empty-s">Avval so'zlar qo'shing, keyin bu bo'limga keling</div>
+          <button class="btn btn-blue" onclick="go('add')">So'z Qo'shish</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="page" id="p-stats">
+      <div class="ph">
+        <div class="ph-title">Liderlar Jadvali</div>
+        <div class="ph-sub">O'z bilimingizni boshqalar bilan solishtiring</div>
+      </div>
+      
+      <div class="stats-tabs">
+        <button class="stats-tab on" id="st-all" onclick="loadLeaderboard('alltime')">Barchasi</button>
+        <button class="stats-tab" id="st-mon" onclick="loadLeaderboard('monthly')">Shu oy</button>
+        <button class="stats-tab" id="st-dai" onclick="loadLeaderboard('daily')">Bugun</button>
+      </div>
+
+      <div class="leader-top" id="leader-top">
+        <!-- Top 3 winners here -->
+      </div>
+
+      <div class="leader-list" id="leader-list">
+        <!-- Other players here -->
+      </div>
+    </div>
+    
+
+
+
+    <div class="page" id="p-profile">
+      <div class="ph">
+        <div class="ph-title">Profile</div>
+        <div class="ph-sub">Personal info & settings</div>
+      </div>
+      
+      <div class="pf-dashboard">
+        <div class="pf-sidebar">
+          <div class="pf-card-modern">
+            <div class="pf-cover"></div>
+            <div class="pf-top">
+              <div class="profile-av" id="pf-av" onclick="document.getElementById('av-input').click()" style="cursor:pointer;position:relative" title="Upload Photo">
+                <div id="pf-av-content"></div>
+                <div style="position:absolute;bottom:-4px;right:-4px;background:var(--p);width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--bg2)">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                </div>
+              </div>
+              <input type="file" id="av-input" style="display:none" accept="image/*" onchange="uploadAvatar(this)"/>
+            </div>
+            <div class="pf-info">
+              <div class="pf-name-lg" id="pf-name"></div>
+              <div class="pf-email-sm" id="pf-email"></div>
+              <div class="pf-badge-modern" id="pf-level-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                Level: 1 Student
+              </div>
+            </div>
+            
+            <div class="pf-actions">
+              <button class="btn btn-qz" onclick="openEditName()" style="width:100%;justify-content:center">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg> Ismni tahrirlash
+              </button>
+              <button class="btn btn-qz" onclick="document.getElementById('av-input').click()" style="width:100%;justify-content:center">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg> Rasm yuklash
+              </button>
+              <button class="btn btn-qz" onclick="openChangePassword()" style="width:100%;justify-content:center">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Parolni o'zgartirish
+              </button>
+              <button class="btn btn-danger" onclick="doLogout()" style="width:100%;justify-content:center;margin-top:8px">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg> Chiqish
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pf-main">
+          <div class="ph-title" style="font-size:18px;margin-bottom:16px">Quick Stats</div>
+          <div class="pf-stats-grid">
+            <div class="pf-stat-card">
+              <div class="pf-stat-icon"><img src="/img/emojis/1f680.png" class="apple-emoji" alt="🚀"></div>
+              <div class="pf-stat-info">
+                <div class="pf-stat-v" id="pf-total">0</div>
+                <div class="pf-stat-l">Total XP</div>
+              </div>
+            </div>
+            <div class="pf-stat-card">
+              <div class="pf-stat-icon"><img src="/img/emojis/2705.png" class="apple-emoji" alt="✅"></div>
+              <div class="pf-stat-info">
+                <div class="pf-stat-v" id="pf-mastered">0</div>
+                <div class="pf-stat-l">Mastered</div>
+              </div>
+            </div>
+            <div class="pf-stat-card">
+              <div class="pf-stat-icon"><img src="/img/emojis/1f525.png" class="apple-emoji" alt="🔥"></div>
+              <div class="pf-stat-info">
+                <div class="pf-stat-v" id="pf-streak-n">0</div>
+                <div class="pf-stat-l">Streak</div>
+                <div style="display:none" id="pf-streak"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div style="margin-top:30px">
+            <div class="ph-title" style="font-size:18px">My Achievements</div>
+            <div class="ach-grid" id="ach-grid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- SPELLING MASHQI PAGE -->
+    <div class="page" id="p-spelling">
+      <div class="ph">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+          <div class="ph-title" style="margin:0">Spelling Mashqi</div>
+          <span style="font-size:11px;background:linear-gradient(135deg,#00e5a0,#00d4ff);color:#000;padding:3px 10px;border-radius:99px;font-weight:800">YANGI</span>
+        </div>
+        <div class="ph-sub">So'zni eshit va to'g'ri yoz</div>
+      </div>
+      <!-- ACCENT SELECTION -->
+      <div id="sp-accent-sel" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:300px">
+        <div style="background:var(--bg2);border:1px solid var(--bd2);border-radius:20px;padding:28px;width:100%;max-width:440px">
+          <div style="text-align:center;margin-bottom:12px;color:var(--p2)">
+            <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/>
+            </svg>
+          </div>
+          <div style="text-align:center;font-weight:800;font-size:17px;color:var(--tx);margin-bottom:4px">Qaysi aksent?</div>
+          <div style="text-align:center;font-size:13px;color:var(--tx3);margin-bottom:20px">Mashq davomida so'zlar shu aksent bilan o'qiladi</div>
+          <div style="display:flex;gap:12px;margin-bottom:20px">
+            <div class="sp-accent-card on" id="sp-acc-us" onclick="spSelectAccent('us')">
+              <div style="font-size:28px">🇺🇸</div>
+              <div class="sp-accent-label">American</div>
+              <div class="sp-accent-sub">en-US</div>
+            </div>
+            <div class="sp-accent-card" id="sp-acc-gb" onclick="spSelectAccent('gb')">
+              <div style="font-size:28px">🇬🇧</div>
+              <div class="sp-accent-label">British</div>
+              <div class="sp-accent-sub">en-GB</div>
+            </div>
+          </div>
+          <button class="btn btn-blue" style="width:100%;padding:13px;font-size:15px" onclick="spStartSession()">
+            Mashqni boshlash →
+          </button>
+        </div>
+      </div>
+      <!-- SESSION -->
+      <div id="sp-session" style="display:none">
+        <div class="sp-stats">
+          <div class="sp-stat"><div class="sp-stat-label">JAMI</div><div class="sp-stat-val" id="sp-total">0</div></div>
+          <div class="sp-stat"><div class="sp-stat-label">TO'G'RI</div><div class="sp-stat-val" style="color:var(--grn)" id="sp-correct">0</div></div>
+          <div class="sp-stat"><div class="sp-stat-label">XATO</div><div class="sp-stat-val" style="color:var(--red)" id="sp-wrong">0</div></div>
+          <div class="sp-stat"><div class="sp-stat-label">STREAK</div><div class="sp-stat-val" style="color:var(--amber)" id="sp-streak">0</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+          <span style="font-size:11px;color:var(--tx3);font-weight:600;white-space:nowrap" id="sp-prog-txt">1/20</span>
+          <div class="prog" style="flex:1"><div class="prog-f" id="sp-prog-bar" style="width:0%"></div></div>
+          <span style="font-size:11px;color:var(--tx3);font-weight:600" id="sp-prog-pct">0%</span>
+
+        </div>
+        <button class="sp-speak-btn" onclick="spSpeakCurrent()" title="Qayta tinglash">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+        </button>
+        <div class="sp-tiles" id="sp-tiles"></div>
+        <div style="display:flex;gap:10px;align-items:center">
+          <input type="text" class="inp" id="sp-inp" placeholder="So'zni yozing..." autocomplete="off" autocorrect="off" spellcheck="false"
+            style="flex:1;text-transform:lowercase" onkeydown="spKey(event)" oninput="spUpdateTiles()"/>
+          <button class="btn btn-blue" onclick="spCheck()">Tekshirish <img src="/img/emojis/2714-fe0f.png" class="apple-emoji" alt="✓"></button>
+        </div>
+        <div id="sp-feedback" style="display:none;margin-top:12px"></div>
+        <button class="btn btn-ghost" id="sp-next-btn" onclick="spNextWord()" style="display:none;width:100%;margin-top:12px">Davom etish →</button>
+        <div style="text-align:center;margin-top:16px">
+          <button class="btn btn-ghost" onclick="spEndSession()" style="font-size:12px;color:var(--tx3)">Sessiyani tugatish</button>
+        </div>
+      </div>
+      <!-- RESULT -->
+      <div id="sp-result" style="display:none;text-align:center;padding:20px 0">
+        <div style="font-size:48px;margin-bottom:10px"><img src="/img/emojis/1f389.png" class="apple-emoji" alt="🎉"></div>
+        <div style="font-size:22px;font-weight:900;color:var(--tx);margin-bottom:6px">Sessiya yakunlandi!</div>
+        <div style="font-size:14px;color:var(--tx3);margin-bottom:24px">Natijalaringiz:</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:320px;margin:0 auto 24px">
+          <div class="sp-result-item"><div class="sp-result-label">To'g'ri</div><div class="sp-result-value" style="color:var(--grn)" id="spr-correct">0</div></div>
+          <div class="sp-result-item"><div class="sp-result-label">Xato</div><div class="sp-result-value" style="color:var(--red)" id="spr-wrong">0</div></div>
+          <div class="sp-result-item"><div class="sp-result-label">Foiz</div><div class="sp-result-value" style="color:var(--p2)" id="spr-pct">0%</div></div>
+          <div class="sp-result-item"><div class="sp-result-label">Streak</div><div class="sp-result-value" style="color:var(--amber)" id="spr-streak">0</div></div>
+        </div>
+        <button class="btn btn-blue" style="width:100%;max-width:320px;padding:13px" onclick="spRestartAccent()">Qayta boshlash</button>
+        <button class="btn btn-ghost" style="width:100%;max-width:320px;margin-top:8px" onclick="spRestartAccent()">Aksent tanlash</button>
+      </div>
+    </div>
+
+    <!-- AI CHAT / BRAINBOT PAGE -->
+    <div class="page" id="p-aichat">
+      <div class="ph">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+          <div class="ph-title" style="margin:0">BrainBot</div>
+          <span style="font-size:11px;background:linear-gradient(135deg,#00d4ff,#7c5cfc);color:#fff;padding:3px 10px;border-radius:99px;font-weight:800">AI</span>
+        </div>
+        <div class="ph-sub">Grammar, Writing, Idiomalar va boshqalar</div>
+      </div>
+      <div class="ai-layout">
+        <div class="ai-sidebar" id="ai-sb">
+          <div class="ai-sidebar-head">
+            <button class="ai-new-btn" onclick="aiNewChat()">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Yangi suhbat
+            </button>
+          </div>
+          <div class="ai-chat-list" id="ai-chat-list">
+            <div style="text-align:center;padding:20px;font-size:12px;color:var(--tx3)">...</div>
+          </div>
+        </div>
+        <div class="ai-main">
+          <div class="ai-header">
+            <button id="ai-mob-btn" class="btn btn-ghost" style="display:none;padding:6px;width:32px;height:32px;border-radius:8px" onclick="aiToggleSidebar()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+            <div class="ai-header-icon"><img src="/img/emojis/1f916.png" class="apple-emoji" alt="🤖"></div>
+            <div>
+
+              <div style="font-weight:800;font-size:14px;color:var(--tx)" id="ai-chat-title">BrainBot</div>
+              <div style="font-size:11px;color:var(--tx3)">Ingliz tili AI yordamchisi</div>
+            </div>
+          </div>
+          <div class="ai-messages" id="ai-messages">
+            <div class="ai-empty" id="ai-welcome">
+              <div style="font-size:42px"><img src="/img/emojis/1f916.png" class="apple-emoji" alt="🤖"></div>
+              <div style="font-size:18px;font-weight:800;color:var(--tx)">BrainBot</div>
+              <div style="font-size:13px;color:var(--tx3);max-width:300px;line-height:1.5">Grammar, writing, idiomalar va so'z qo'shish — hamma narsa bir joyda</div>
+              <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:16px">
+                <div onclick="aiFunc('words')" class="ai-func-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> Rasm orqali So'z qo'shish</div>
+                <div onclick="aiQuickStart('Quyidagi matnimni tekshir:\n')" class="ai-func-btn">Writing tekshir</div>
+                <div onclick="aiQuickStart('Quyidagi idiomani tushuntir: ')" class="ai-func-btn">Idioma</div>
+              </div>
+            </div>
+          </div>
+          <div class="ai-bottom">
+            <div class="ai-func-bar">
+              <button class="ai-func-btn" onclick="aiFunc('writing')"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Writing tekshirish</button>
+              <button class="ai-func-btn" onclick="aiFunc('idiom')"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Idioma tahlili</button>
+              <button class="ai-func-btn" onclick="aiFunc('grammar')"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> Grammar qoidasi</button>
+              <button class="ai-func-btn" onclick="aiFunc('writehelp')"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> Matn yozish</button>
+              <button class="ai-func-btn" onclick="aiFunc('words')"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> So'z qo'shish</button>
+            </div>
+            <div class="ai-input-row">
+              <textarea class="ai-inp" id="ai-inp" rows="1" placeholder="Savol yozing..." onkeydown="aiKey(event)" oninput="aiAutoResize(this)"></textarea>
+              <button class="ai-send-btn" id="ai-send-btn" onclick="aiSend()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <input type="file" id="ai-img-input" accept="image/*" style="display:none" onchange="aiHandleImage(event)"/>
+    </div>
+
+  </main>
+</div>
+
+<!-- Modal -->
+<div class="modal-bg" id="modal">
+  <div class="modal">
+    <div class="m-title" id="m-title"></div>
+    <div id="m-body"></div>
+    <div class="m-acts" id="m-acts"></div>
+  </div>
+</div>
+
+<div class="modal-bg" id="crop-modal">
+  <div class="modal" style="max-width:440px;width:95%;padding:0;overflow:hidden;border-radius:24px;background:var(--bg)">
+    <div style="padding:20px 24px;border-bottom:1px solid var(--bd2)"><div style="font-weight:800;font-size:16px;color:var(--tx)">Rasmni sozlash</div></div>
+    <div style="width:100%;height:350px;background:#000;overflow:hidden">
+      <img id="crop-img" src="" style="max-width:100%">
+    </div>
+    <div style="padding:20px 24px;display:flex;gap:12px">
+      <button class="btn btn-ghost" style="flex:1" onclick="closeCrop()">Bekor qilish</button>
+      <button class="btn btn-blue" style="flex:1" onclick="applyCrop()">Saqlash</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Toast -->
+<div class="toast" id="toast">
+  <div class="t-ico" id="t-ico"></div>
+  <div><div class="t-ttl" id="t-ttl"></div><div class="t-msg" id="t-msg"></div></div>
+</div>
+
+<!-- Loader -->
+<div class="ov" id="ov"><div class="spin-big"></div></div>
+
+<!-- Modal Edit Name -->
+<div class="modal-bg" id="modal-name">
+  <div class="modal" style="max-width:340px">
+    <div class="modal-head" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px">
+      <div style="font-size:17px;font-weight:800;color:var(--tx)">Ismni tahrirlash</div>
+      <div style="cursor:pointer;font-size:24px;color:var(--tx3)" onclick="E('modal-name').classList.remove('open')">×</div>
+    </div>
+    <div style="margin-bottom:15px">
+      <div style="font-size:12px;color:var(--tx3);margin-bottom:6px;font-weight:600">Ism va familiya</div>
+      <input type="text" class="modal-input" id="en-name" placeholder="Masalan: Aziz Rahimov" style="width:100%;background:var(--bg3);border:1.5px solid var(--bd);border-radius:12px;padding:12px;color:var(--tx);font-family:inherit">
+    </div>
+    <div id="en-err" style="color:#ff4d6d;font-size:12px;margin-bottom:10px;font-weight:600"></div>
+    <button class="btn btn-qz" style="width:100%;justify-content:center" id="en-btn" onclick="doUpdateName()">Saqlash</button>
+  </div>
+</div>
+<!-- Modal Edit Goals -->
+<div class="modal-bg" id="modal-goals">
+  <div class="modal" style="max-width:340px">
+    <div class="modal-head" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px">
+      <div style="font-size:17px;font-weight:800;color:var(--tx)">Maqsadlarni belgilash</div>
+      <div style="cursor:pointer;font-size:24px;color:var(--tx3)" onclick="E('modal-goals').classList.remove('open')">×</div>
+    </div>
+    <div style="margin-bottom:12px">
+      <div style="font-size:12px;color:var(--tx3);margin-bottom:6px;font-weight:600">Kunlik so'z takrorlash</div>
+      <input type="number" class="modal-input" id="eg-reviews" style="width:100%;background:var(--bg3);border:1.5px solid var(--bd);border-radius:12px;padding:12px;color:var(--tx);font-family:inherit">
+    </div>
+    <div style="margin-bottom:12px">
+      <div style="font-size:12px;color:var(--tx3);margin-bottom:6px;font-weight:600">Kunlik gap tuzish</div>
+      <input type="number" class="modal-input" id="eg-sentences" style="width:100%;background:var(--bg3);border:1.5px solid var(--bd);border-radius:12px;padding:12px;color:var(--tx);font-family:inherit">
+    </div>
+    <div style="margin-bottom:15px">
+      <div style="font-size:12px;color:var(--tx3);margin-bottom:6px;font-weight:600">Kunlik XP to'plash</div>
+      <input type="number" class="modal-input" id="eg-xp" style="width:100%;background:var(--bg3);border:1.5px solid var(--bd);border-radius:12px;padding:12px;color:var(--tx);font-family:inherit">
+    </div>
+    <div id="eg-err" style="color:#ff4d6d;font-size:12px;margin-bottom:10px;font-weight:600"></div>
+    <button class="btn btn-qz" style="width:100%;justify-content:center" id="eg-btn" onclick="doUpdateGoals()">Saqlash</button>
+  </div>
+</div>
+
+<script src="/js/app.js?v=28"></script>
+</body>
+</html>
