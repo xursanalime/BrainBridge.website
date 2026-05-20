@@ -151,15 +151,7 @@ function playSound(type) {
   } catch(e) {}
 }
 
-function speak(word, lang='en-US') {
-  if (!window.speechSynthesis) return;
-  speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(word);
-  u.lang = lang;
-  u.rate = 0.9;
-  u.pitch = 1;
-  speechSynthesis.speak(u);
-}
+
 
 function toast(msg,type,title){
   if(msg.includes('Yutuq') || msg.includes('Tabriklaymiz')) playSound('levelUp');
@@ -522,9 +514,7 @@ async function loadWords(){
         </div>
         <span class="badge b${w.box||0}">${BOX_LABELS[w.box||0]}</span>
         <div class="wc-acts">
-          <div class="ic-btn" title="Talaffuz" onclick="event.stopPropagation();speak('${esc(w.word)}')">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
-          </div>
+
           <div class="ic-btn" title="Tahrirlash" onclick="editWord(${w.id},'${esc(w.word)}','${esc(w.translation)}')">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
           </div>
