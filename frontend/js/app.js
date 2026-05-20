@@ -675,8 +675,7 @@ function renderQ(){
     if(total>1&&found>0)E('t-hint').textContent='✅ '+found+'/'+total+' topildi — yana biri bormi?';
     else if(total>1)E('t-hint').textContent='Bu tarjimaning '+total+' ta inglizcha varianti bor';
     else E('t-hint').textContent="Inglizcha so'zini yozing";
-    // Auto-speak translation
-    speak(grp[0].translation, 'uz-UZ');
+
     const inp=E('t-inp');inp.value='';inp.disabled=false;
     inp.placeholder="Inglizcha so'zini yozing...";
     setTimeout(()=>inp.focus(),80);
@@ -709,7 +708,7 @@ function renderQ(){
   }else{
     const w=grp[Math.floor(Math.random()*grp.length)];
     E('t-prompt').textContent=w.word;
-    speak(w.word);  // Auto-pronounce the English word
+
     E('t-hint').textContent="O'zbek tarjimasini tanlang";
     const answer=w.translation;
     const otherTrans=testWords.map(x=>x.translation).filter(t=>t.toLowerCase()!==synTrans);
