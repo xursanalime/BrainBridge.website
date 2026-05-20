@@ -79,7 +79,7 @@ from db import init_db, get_engine
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    logger.info("🚀 BrainBridge v3.1.0 starting up...")
+    logger.info("🚀 BrainBridge v3.1.1 starting up...")
     init_db()
     logger.info("✅ Database initialized")
     yield
@@ -88,7 +88,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="BrainBridge API",
-    version="3.1.0",
+    version="3.1.1",
     description="Ingliz so'zlarini aqlli o'rganing",
     lifespan=lifespan,
     docs_url="/api/docs" if os.getenv("ENV") != "production" else None,
@@ -220,7 +220,7 @@ def health():
 
     return {
         "ok": db_status == "connected",
-        "version": "3.1.0",
+        "version": "3.1.1",
         "db": db_status,
         "env": os.getenv("ENV", "production"),
     }
