@@ -12,5 +12,5 @@ COPY . .
 # Set working directory to backend
 WORKDIR /app/backend
 
-# Run the app (shell form for $PORT expansion)
-CMD uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}
+# Run the app using python so it picks up os.getenv('PORT') safely
+CMD ["python", "main.py"]
