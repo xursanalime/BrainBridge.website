@@ -732,7 +732,7 @@ async function answerQuizGrp(btn,chosen){
   if(!ok){document.querySelectorAll('.qopt').forEach(b=>{if(_quizCorrects.includes(b.textContent.toLowerCase()))b.classList.add('correct');});}
   // Fire-and-forget (don't block on API)
   grp.forEach(w=>api('POST','/words/'+w.id+'/review',{correct:ok}).catch(()=>{}));
-  if(ok){playSound('correct'); speak(grp[0].word); const allW=grp.map(w=>w.word).join(', ');toast(`"${allW}" — to\'g\'ri!`,'ok',"Yuqori bosqichga o'tdi ✅");}
+  if(ok){playSound('correct'); const allW=grp.map(w=>w.word).join(', ');toast(`"${allW}" — to\'g\'ri!`,'ok',"Yuqori bosqichga o'tdi ✅");}
   else{playSound('wrong'); toast(`To\'g\'ri: "${_quizCorrects.slice(0,2).join(' / ')}"`,'warn',"Orqaga qaytdi ↩");}
   setTimeout(()=>{testGrpIdx++;_quizCorrects=[];renderQ();},1300);
 }
