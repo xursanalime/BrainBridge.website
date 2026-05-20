@@ -9,5 +9,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy everything
 COPY . .
 
-# Run the app
-CMD ["sh", "-c", "cd backend && uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}"]
+# Set working directory to backend
+WORKDIR /app/backend
+
+# Run the app (shell form for $PORT expansion)
+CMD uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}
