@@ -1,0 +1,24 @@
+{
+  "name": "BrainBridge",
+  "short_name": "BrainBridge",
+  "description": "Ingliz so'zlarini Leitner + AI bilan o'rganing",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0d1a",
+  "theme_color": "#7c5cfc",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/img/emojis/1f9e0.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/emojis/1f9e0.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "lang": "uz"
+}

@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /img/
+
+# API endpointlari indekslanmasligi kerak
+Disallow: /api/
+Disallow: /admin
+
+# Sitemap
+Sitemap: https://brainbridge.uz/sitemap.xml

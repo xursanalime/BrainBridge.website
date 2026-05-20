@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel — BrainBridge</title>
+<link rel="stylesheet" href="/css/style.css?v=30">
+<style>
+  body { background: var(--bg); color: var(--tx); font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
+  .admin-container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+  .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+  .admin-title { font-size: 32px; font-weight: 900; background: linear-gradient(135deg, var(--p), #00d4ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-bottom: 40px; }
+  .stat-card { background: var(--bg2); border: 1px solid var(--bd); border-radius: 24px; padding: 24px; display: flex; align-items: center; gap: 20px; transition: transform 0.2s; }
+  .stat-card:hover { transform: translateY(-4px); }
+  .stat-icon { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: justify-content; font-size: 28px; }
+  .stat-info { flex: 1; }
+  .stat-val { font-size: 24px; font-weight: 800; color: var(--tx); }
+  .stat-lbl { font-size: 13px; color: var(--tx3); margin-top: 4px; }
+  
+  .table-card { background: var(--bg2); border: 1px solid var(--bd); border-radius: 24px; padding: 24px; overflow: hidden; }
+  .table-header { font-size: 18px; font-weight: 800; margin-bottom: 20px; }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; padding: 12px; color: var(--tx3); font-size: 13px; border-bottom: 1px solid var(--bd2); }
+  td { padding: 16px 12px; border-bottom: 1px solid var(--bd2); font-size: 14px; }
+  tr:last-child td { border-bottom: none; }
+  
+  .btn-sm { padding: 6px 12px; font-size: 12px; border-radius: 8px; }
+  select, input { background: var(--bg3); color: var(--tx); border: 1px solid var(--bd); border-radius: 8px; padding: 6px; font-family: inherit; font-size: 13px; }
+  
+  .loader-wrap { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; }
+  .loader-wrap.on { display: flex; }
+</style>
+</head>
+<body>
+
+<div class="admin-container">
+  <div class="admin-header">
+    <div class="admin-title">BrainBridge Admin</div>
+    <button class="btn btn-ghost" onclick="location.href='/'">Bosh sahifaga qaytish</button>
+  </div>
+
+  <div class="stats-grid" id="stats-grid">
+    <div class="stat-card">
+      <div class="stat-icon" style="background:rgba(124,92,252,.1);color:var(--p2)">👥</div>
+      <div class="stat-info"><div class="stat-val" id="adm-tot">0</div><div class="stat-lbl">Umumiy foydalanuvchilar</div></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon" style="background:rgba(0,229,160,.1);color:#00e5a0">🪙</div>
+      <div class="stat-info"><div class="stat-val" id="adm-coins">0</div><div class="stat-lbl">Jami tangalar</div></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon" style="background:rgba(255,215,0,.1);color:#ffd700">⭐</div>
+      <div class="stat-info"><div class="stat-val" id="adm-xp">0</div><div class="stat-lbl">Jami XP</div></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon" style="background:rgba(0,212,255,.1);color:#00d4ff">📅</div>
+      <div class="stat-info"><div class="stat-val" id="adm-today">0</div><div class="stat-lbl">Bugun ro'yxatdan o'tdi</div></div>
+    </div>
+  </div>
+
+  <div class="table-card">
+    <div class="table-header">Foydalanuvchilar Ro'yxati</div>
+    <div style="overflow-x:auto">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Tanga / XP</th>
+            <th>Amallar</th>
+          </tr>
+        </thead>
+        <tbody id="users-tbody">
+          <tr><td colspan="5" style="text-align:center;padding:40px;color:var(--tx3)">Yuklanmoqda...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="loader-wrap" id="loader"><div class="spin-big"></div></div>
+
+<script src="/js/admin.js?v=30"></script>
+</body>
+</html>

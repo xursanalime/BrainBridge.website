@@ -1,0 +1,50 @@
+venv/
+.env
+.env.*
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Logs
+backend/logs/
+backend/server.log
+*.log
+
+# Cache fayllar
+backend/mnemonics_cache.json
+
+# Uploads (foydalanuvchi rasmlari)
+uploads/
+
+# Test va bir martalik skriptlar
+test_me.py
+curl_resp.txt
+payload.json
+dummy.jpg
+append_css.py
+append_icon_css.py
+
+# Migration skriptlari (eski)
+backend/migrate_*.py
+backend/update_db*.py
+backend/seed_*.py
+backend/check_db.py
+backend/reset_pwd.py
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+dist/
+build/
+*.egg-info/

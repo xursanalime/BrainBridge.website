@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="theme-color" content="#0d0d1a"/>
+
+<!-- ── SEO ──────────────────────────────────────────────── -->
+<title>BrainBridge — Ingliz So'zlarini Aqlli O'rganing</title>
+<meta name="description" content="BrainBridge — ilmiy isbotlangan Leitner intervalli takrorlash tizimi orqali ingliz so'zlarini tez va mustahkam yodlang. AI yordamchi, spelling mashqi va bepul boshlash."/>
+<meta name="keywords" content="ingliz tili, so'z yodlash, Leitner, flashcard, BrainBridge, AI, spelling, o'zbek"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://brainbridge.uz/"/>
+
+<!-- ── Open Graph (Facebook, Telegram) ──────────────────── -->
+<meta property="og:type"        content="website"/>
+<meta property="og:url"         content="https://brainbridge.uz/"/>
+<meta property="og:title"       content="BrainBridge — Ingliz So'zlarini Aqlli O'rganing"/>
+<meta property="og:description" content="Leitner algoritmi + AI bilan ingliz so'zlarini 3x tezroq yodlang. Bepul boshlang!"/>
+<meta property="og:image"       content="https://brainbridge.uz/img/og-cover.png"/>
+<meta property="og:image:width"  content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:locale"      content="uz_UZ"/>
+<meta property="og:site_name"   content="BrainBridge"/>
+
+<!-- ── Twitter Card ──────────────────────────────────────── -->
+<meta name="twitter:card"        content="summary_large_image"/>
+<meta name="twitter:title"       content="BrainBridge — Ingliz So'zlarini Aqlli O'rganing"/>
+<meta name="twitter:description" content="Leitner + AI bilan ingliz so'zlarini 3x tezroq yodlang."/>
+<meta name="twitter:image"       content="https://brainbridge.uz/img/og-cover.png"/>
+
+<!-- ── PWA ───────────────────────────────────────────────── -->
+<link rel="manifest" href="/manifest.json"/>
+<link rel="apple-touch-icon" href="/img/emojis/1f9e0.png"/>
+
+<!-- ── Structured Data (JSON-LD) ─────────────────────────── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "BrainBridge",
+  "description": "Ingliz so'zlarini Leitner algoritmi va AI yordamida o'rganing",
+  "url": "https://brainbridge.uz",
+  "applicationCategory": "EducationApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  },
+  "inLanguage": "uz"
+}
+</script>
+
+<!-- ── Fonts (preconnect for speed) ─────────────────────── -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+
+<!-- ── Assets ─────────────────────────────────────────────── -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js" defer></script>
+<link rel="icon" type="image/png" href="/img/emojis/1f9e0.png?v=28">
+<link rel="stylesheet" href="/css/style.css?v=30">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     LANDING PAGE
+════════════════════════════════════════════════ -->
+<div id="landing">
+
+  <!-- Navbar -->
+  <nav class="lnav">
+    <div class="lnav-logo">
+      <div class="lnav-logo-icon"><img src="/img/emojis/1f9e0.png" class="apple-emoji" style="width:24px;height:24px;object-fit:contain" alt="🧠"></div>
+      BrainBridge
+    </div>
+    <div class="lnav-links">
+      <div class="lnav-link" onclick="openAuthPage('login')">Kirish</div>
+      <div class="lnav-cta" onclick="openAuthPage('reg')">Bepul Boshlash →</div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-orb hero-orb1"></div>
+      <div class="hero-orb hero-orb2"></div>
+      <div class="hero-orb hero-orb3"></div>
+    </div>
+    <div style="position:relative;z-index:1;width:100%">
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        Leitner tizimi bilan o'rganing
+      </div>
+      <h1 class="hero-title">
+        So'zlarni<br><span>Aqlli O'rganing</span>
+      </h1>
+      <p class="hero-sub">Ilmiy isbotlangan intervalli takrorlash usuli bilan ingliz so'zlarini qisqa vaqtda xotirangizga mustahkam o'rnatib oling.</p>
+      
+      <div class="hero-visual">
+        <div class="float-card fc1" style="min-width:160px">
+          <div class="fc-word">accomplish</div>
+          <div class="fc-trans">bajarmoq, erishmoq</div>
+          <div class="fc-badge"><img src="/img/emojis/2705.png" class="apple-emoji" alt="✅"> O'rganildi</div>
+        </div>
+        <div class="float-card fc2" style="min-width:160px">
+          <div class="fc-word">persevere</div>
+          <div class="fc-trans">davom ettirmoq</div>
+          <div class="fc-badge"><img src="/img/emojis/1f49c.png" class="apple-emoji" alt="💜"> 3-bosqich</div>
+        </div>
+        <div class="float-card fc3" style="min-width:160px">
+          <div class="fc-word">eloquent</div>
+          <div class="fc-trans">notiqlik qobiliyatli</div>
+          <div class="fc-badge"><img src="/img/emojis/1f534.png" class="apple-emoji" alt="🔴"> 1-bosqich</div>
+        </div>
+      </div>
+
+      <div class="hero-btns">
+        <div class="btn-hero-primary" onclick="openAuthPage('reg')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          Ro'yxatdan o'tish
+        </div>
+        <div class="btn-hero-secondary" onclick="openAuthPage('login')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+          Kirish
+        </div>
+      </div>
+      <p style="color:var(--tx2);font-size:14px;margin-top:16px;">🎁 Yangi foydalanuvchilar uchun barcha funksiyalar bepul!</p>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <div id="features" style="background:var(--bg2);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)">
+    <div class="section">
+      <div class="sec-head">
+        <div class="sec-tag">Imkoniyatlar</div>
+        <h2 class="sec-title">So'z o'rganishni o'yinga aylantiring</h2>
+        <p class="sec-sub">Har bir xususiyat sizning o'rganish jarayoningizni yanada samarali va qiziqarli qilish uchun yaratilgan.</p>
+      </div>
+      <div class="feat-grid">
+        <div class="feat-card">
+          <div class="feat-icon" style="background:rgba(124,92,252,.15);color:#9b7dff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997-.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997-.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg></div>
+          <div class="feat-title">Leitner Algoritmi</div>
+          <div class="feat-desc">Ilmiy isbotlangan 6 qutili Leitner tizimi — bilgan so'zlaringizni kamroq, yangi so'zlaringizni ko'proq takrorlaydi.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon" style="background:rgba(0,212,255,.1);color:#00d4ff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <div class="feat-title">Ommaviy Qo'shish</div>
+          <div class="feat-desc">Bir vaqtda 300 ta so'z qo'shing. Oddiy format: <code style="background:var(--bg3);padding:2px 6px;border-radius:4px;font-family:monospace;font-size:12px">inglizcha - o'zbekcha</code></div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon" style="background:rgba(0,229,160,.1);color:#00e5a0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg></div>
+          <div class="feat-title">Ikki Turdagi Test</div>
+          <div class="feat-desc">Yozish testi (so'zni o'zingiz yozasiz) va Quiz testi (4 ta variant ichidan tanlaysiz) — ikki yo'nalishda ham.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon" style="background:rgba(255,77,109,.1);color:#ff4d6d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 3z"/></svg></div>
+          <div class="feat-title">Streak Tizimi</div>
+          <div class="feat-desc">Har kuni o'rganib borish odat hosil qiladi. Streak tizimi sizni motivatsiyali ushlab turadi.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon" style="background:rgba(255,184,77,.1);color:#ffb84d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg></div>
+          <div class="feat-title">Batafsil Statistika</div>
+          <div class="feat-desc">Dashboard — har bir bosqichdagi so'zlar soni, bugun takrorlash keraklar va o'rganilganlar foizi.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon" style="background:rgba(168,85,247,.1);color:#c084fc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1" fill="currentColor"/></svg></div>
+          <div class="feat-title">Google bilan Kirish</div>
+          <div class="feat-desc">Google akkauntingiz orqali bir bosimda kirish. Brute-force himoya bilan kuchli xavfsizlik.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEW FEATURES SHOWCASE removed -->
+  <!-- How It Works -->
+  <div id="howitworks">
+    <div class="section">
+      <div class="sec-head">
+        <div class="sec-tag">Qanday Ishlaydi</div>
+        <h2 class="sec-title">3 ta qadam, cheksiz natija</h2>
+        <p class="sec-sub">BrainBridge ni ishlatish nihoyatda oddiy. Bir necha daqiqada o'rganishni boshlang.</p>
+      </div>
+      <div class="how-wrap">
+        <div class="how-steps">
+          <div class="how-step">
+            <div class="how-num">1</div>
+            <div class="how-info">
+              <div class="how-st">So'zlarni qo'shing</div>
+              <div class="how-sd">english - o'zbek formatida so'zlaringizni qo'shing. CSV, to'g'ridan-to'g'ri yozish — hammasi qulaydir.</div>
+            </div>
+          </div>
+          <div class="how-step">
+            <div class="how-num">2</div>
+            <div class="how-info">
+              <div class="how-st">Test qiling</div>
+              <div class="how-sd">Yozish yoki Quiz rejimida so'zlarni sinab ko'ring. To'g'ri javob — yuqori bosqichga, noto'g'ri — qaytish.</div>
+            </div>
+          </div>
+          <div class="how-step">
+            <div class="how-num">3</div>
+            <div class="how-info">
+              <div class="how-st">Takrorlang va o'rganing</div>
+              <div class="how-sd">Har kuni eslatma olasiz. 30 kun ichida so'z 5-bosqichga yetsa — o'rganildi deb belgilanadi!</div>
+            </div>
+          </div>
+        </div>
+        <div class="how-visual">
+          <div style="font-size:12px;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px">Leitner Bosqichlari</div>
+          <div class="box-visual-row">
+            <div class="bvr-item"><div class="bvr-n" style="color:#8888b8"><img src="/img/emojis/1f331.png" class="apple-emoji" alt="🌱"></div><div class="bvr-l">Yangi</div><div style="font-size:10px;color:var(--tx3);margin-top:4px">0 kun</div></div>
+            <div class="bvr-item"><div class="bvr-n" style="color:#ff4d6d"><img src="/img/emojis/1f534.png" class="apple-emoji" alt="🔴"></div><div class="bvr-l">1-boss.</div><div style="font-size:10px;color:var(--tx3);margin-top:4px">1 kun</div></div>
+            <div class="bvr-item"><div class="bvr-n" style="color:#ffb84d"><img src="/img/emojis/1f534.png" class="apple-emoji" alt="🔴"></div><div class="bvr-l">2-boss.</div><div style="font-size:10px;color:var(--tx3);margin-top:4px">3 kun</div></div>
+          </div>
+          <div class="box-visual-row">
+            <div class="bvr-item"><div class="bvr-n" style="color:#7c5cfc"><img src="/img/emojis/1f49c.png" class="apple-emoji" alt="💜"></div><div class="bvr-l">3-boss.</div><div style="font-size:10px;color:var(--tx3);margin-top:4px">7 kun</div></div>
+            <div class="bvr-item"><div class="bvr-n" style="color:#c084fc"><img src="/img/emojis/1f31f.png" class="apple-emoji" alt="🌟"></div><div class="bvr-l">4-boss.</div><div style="font-size:10px;color:var(--tx3);margin-top:4px">14 kun</div></div>
+            <div class="bvr-item"><div class="bvr-n" style="color:#00e5a0"><img src="/img/emojis/2705.png" class="apple-emoji" alt="✅"></div><div class="bvr-l">O'rganildi</div><div style="font-size:10px;color:var(--tx3);margin-top:4px">30 kun</div></div>
+          </div>
+          <div style="margin-top:16px;padding:14px;background:rgba(0,229,160,.06);border:1px solid rgba(0,229,160,.2);border-radius:12px;font-size:12px;color:#00e5a0;line-height:1.6;font-weight:500">
+            <img src="/img/emojis/2705.png" class="apple-emoji" alt="✅"> <strong>To'g'ri javob</strong> → keyingi bosqich<br>
+            ↩ <strong>Noto'g'ri javob</strong> → 1-bosqichga qaytadi
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- CTA Section -->
+  <div style="padding:60px 5vw">
+    <div class="cta-wrap" style="max-width:1100px;margin:0 auto">
+      <div style="font-size:52px;margin-bottom:16px"><img src="/img/emojis/1f680.png" class="apple-emoji" alt="🚀"></div>
+      <h2 class="cta-title">Bugundan boshlang!</h2>
+      <p class="cta-sub">Minglab o'quvchilar bilan qo'shiling va ingliz so'zlarini professional darajada o'rganing.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+        <div class="btn-hero-primary" onclick="openAuthPage('reg')">
+          Bepul Ro'yxatdan O'tish →
+        </div>
+        <div class="btn-hero-secondary" onclick="openAuthPage('login')">
+          Kirish
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-logo">
+      <div class="footer-logo-icon"><img src="/img/emojis/1f9e0.png" class="apple-emoji" alt="🧠"></div>
+      BrainBridge
+    </div>
+    <div style="display:flex;flex-direction:column;gap:4px;text-align:center">
+      <div class="footer-copy">© <span id="year">2026</span> BrainBridge. Barcha huquqlar himoyalangan.</div>
+      <div style="font-size:12px;color:var(--tx3)">Ingliz tilini aqlli o'rganing</div>
+    </div>
+    <div style="font-size:13px;color:var(--tx3);display:flex;align-items:center;gap:6px">
+      <img src="/img/emojis/26a1.png" class="apple-emoji" style="width:14px;height:14px" alt="⚡">
+      Leitner tizimi
+    </div>
+  </footer>
+  
+  <script>
+    // Dinamik yil
+    document.getElementById('year').innerText = new Date().getFullYear();
+    
+    // Public statslarni API dan olish
+    fetch('/api/stats/public')
+      .then(res => res.json())
+      .then(data => {
+        if (data.ok) {
+          document.getElementById('statUsers').innerText = data.total_users + "+";
+          document.getElementById('statWords').innerText = data.total_words + "+";
+        }
+      })
+      .catch(err => console.error("Stats xatosi", err));
+  </script>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     AUTH PAGE
+════════════════════════════════════════════════ -->
+<div id="auth">
+  <div class="auth-card">
+    <div class="auth-back" onclick="showLanding()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      Bosh sahifaga qaytish
+    </div>
+
+    <!-- Panel: Login / Register -->
+    <div id="panel-login">
+      <div class="auth-logo-wrap">
+        <div class="auth-logo-icon"><img src="/img/emojis/1f9e0.png" class="apple-emoji" alt="🧠"></div>
+        <div class="auth-logo">BrainBridge</div>
+      </div>
+      <div class="auth-sub">So'zlarni aqlli o'rganing</div>
+      <div class="tabs">
+        <button class="tab on" onclick="authTab('login')">Kirish</button>
+        <button class="tab" onclick="authTab('reg')">Ro'yxat</button>
+      </div>
+      <!-- Google OAuth -->
+      <a href="/api/auth/google/redirect" class="btn-google">
+        <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.14 0 5.95 1.08 8.17 2.86l6.09-6.09C34.46 3.04 29.5 1 24 1 14.82 1 7.01 6.48 3.56 14.24l7.1 5.52C12.38 13.34 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.52 24.5c0-1.56-.14-3.06-.4-4.5H24v9h12.67c-.55 2.96-2.2 5.46-4.67 7.14l7.18 5.57C43.16 38.04 46.52 31.74 46.52 24.5z"/><path fill="#FBBC05" d="M10.66 28.24A14.56 14.56 0 0 1 9.5 24c0-1.48.25-2.9.66-4.24l-7.1-5.52A23.94 23.94 0 0 0 0 24c0 3.82.92 7.44 2.56 10.64l8.1-6.4z"/><path fill="#34A853" d="M24 47c5.5 0 10.12-1.82 13.48-4.94l-7.18-5.57C28.54 37.9 26.38 38.5 24 38.5c-6.26 0-11.62-3.84-13.34-9.26l-8.1 6.4C6.01 41.52 13.82 47 24 47z"/></svg>
+        Google bilan kirish
+      </a>
+      <div class="or-sep">yoki</div>
+      <div id="lf">
+        <div class="fld"><label class="lbl">Email</label><input class="inp" type="email" id="l-e" placeholder="email@example.com" autocomplete="email"/></div>
+        <div class="fld">
+          <label class="lbl">Parol</label>
+          <div class="pass-grp">
+            <input class="inp with-toggle" type="password" id="l-p" placeholder="••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()"/>
+            <div class="pass-toggle" onclick="togglePass('l-p',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          </div>
+        </div>
+        <button class="btn-grad" id="l-btn" onclick="doLogin()">Kirish</button>
+        <div style="text-align:right;margin-top:10px"><a href="#" style="font-size:12px;color:var(--p2);text-decoration:none;font-weight:600" onclick="openForgot();return false">Parolni unutdim?</a></div>
+      </div>
+      <div id="rf" style="display:none">
+        <div class="fld"><label class="lbl">Email</label><input class="inp" type="email" id="r-e" placeholder="email@example.com" autocomplete="email"/></div>
+        <div class="fld">
+          <label class="lbl">Parol (Kamida 8 belgi)</label>
+          <div class="pass-grp">
+            <input class="inp with-toggle" type="password" id="r-p" placeholder="••••••••" autocomplete="new-password"/>
+            <div class="pass-toggle" onclick="togglePass('r-p',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          </div>
+        </div>
+        <div class="fld">
+          <label class="lbl">Parolni takrorlang</label>
+          <div class="pass-grp">
+            <input class="inp with-toggle" type="password" id="r-p2" placeholder="••••••••" autocomplete="new-password"/>
+            <div class="pass-toggle" onclick="togglePass('r-p2',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          </div>
+        </div>
+        <button class="btn-grad" id="r-btn" onclick="doReg()">Ro'yxatdan o'tish</button>
+      </div>
+      <div class="a-err" id="a-err"></div>
+    </div>
+
+    <!-- Panel: Forgot password -->
+    <div id="panel-forgot" style="display:none">
+      <div style="margin-bottom:20px">
+        <div style="font-size:18px;font-weight:800;color:var(--tx);margin-bottom:6px">Parolni tiklash</div>
+        <div style="font-size:13px;color:var(--tx3)">Email manzilingizni kiriting, tiklash havolasini yuboramiz.</div>
+      </div>
+      <div class="fld"><label class="lbl">Email</label><input class="inp" type="email" id="fg-e" placeholder="email@example.com" autocomplete="email"/></div>
+      <button class="btn-grad" id="fg-btn" onclick="doForgot()" style="margin-top:16px">Havola yuborish</button>
+      <div class="a-err" id="fg-err" style="min-height:16px;margin-top:8px"></div>
+      <div style="text-align:center;margin-top:12px"><a href="#" style="font-size:12px;color:var(--p2);text-decoration:none;font-weight:600" onclick="openLoginPanel();return false">← Kirishga qaytish</a></div>
+    </div>
+
+    <!-- Panel: Reset password -->
+    <div id="panel-reset" style="display:none">
+      <div style="margin-bottom:20px">
+        <div style="font-size:18px;font-weight:800;color:var(--tx);margin-bottom:6px">Yangi parol o'rnating</div>
+        <div style="font-size:13px;color:var(--tx3)">Xavfsiz yangi parol kiriting.</div>
+      </div>
+      <div class="fld"><label class="lbl">Yangi parol</label><input class="inp" type="password" id="rp-new" placeholder="Kamida 8 belgi" autocomplete="new-password"/></div>
+      <div class="fld" style="margin-top:10px"><label class="lbl">Parolni tasdiqlang</label><input class="inp" type="password" id="rp-con" placeholder="Yangi parolni takrorlang" autocomplete="new-password"/></div>
+      <button class="btn-grad" id="rp-btn" onclick="doResetPassword()" style="margin-top:16px">Parolni saqlash</button>
+      <div class="a-err" id="rp-err" style="min-height:16px;margin-top:8px"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     APP
+════════════════════════════════════════════════ -->
+<div id="app">
+  <header class="hdr">
+    <div class="hdr-left">
+      <div class="hdr-logo-icon"><img src="/img/emojis/1f9e0.png" class="apple-emoji" alt="🧠"></div>
+      <div class="hdr-logo">BrainBridge</div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:10px">
+      <div class="hdr-notif">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+      </div>
+      <div class="avatar" id="m-av"></div>
+    </div>
+  </header>
+
+  <nav class="sb">
+    <div class="sb-logo-row">
+      <div class="sb-logo-icon"><img src="/img/emojis/1f9e0.png" class="apple-emoji" style="width:24px;height:24px;object-fit:contain" alt="🧠"></div>
+      <div class="sb-logo">BrainBridge</div>
+    </div>
+
+    <div class="sb-sec">Asosiy</div>
+    <button class="nav on" data-p="dash" onclick="go('dash')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Dashboard
+    </button>
+    <div class="sb-sec" style="margin-top:8px">So'zlar</div>
+    <button class="nav" data-p="add" onclick="go('add')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>So'z Qo'shish
+    </button>
+    <button class="nav" data-p="mywords" onclick="go('mywords')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>So'zlarim
+    </button>
+    <button class="nav" data-p="learn" onclick="go('learn')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>O'rganish
+    </button>
+    <button class="nav" data-p="stats" onclick="go('stats')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>Statistika
+    </button>
+
+    <button class="nav" id="nav-admin" style="display:none" onclick="location.href='/admin'">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Admin Panel
+    </button>
+
+    <div class="sb-foot">
+      <button class="nav" data-p="profile" onclick="go('profile')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Profil
+      </button>
+      <div class="u-row">
+        <div class="avatar" id="sb-av" style="width:32px;height:32px;font-size:12px"></div>
+        <div class="u-info">
+          <div class="u-email" id="sb-em"></div>
+          <div class="u-role">O'quvchi</div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="bnav">
+    <button class="bni" data-p="dash" onclick="go('dash')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+      <div class="bni-dot"></div><div class="bni-label">Bosh</div>
+    </button>
+    <button class="bni" data-p="learn" onclick="go('learn')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      <div class="bni-dot"></div><div class="bni-label">O'rganish</div>
+    </button>
+    <button class="bni bni-add" onclick="go('add')">
+      <div class="bni-add-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+    </button>
+    <button class="bni" data-p="stats" onclick="go('stats')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+      <div class="bni-dot"></div><div class="bni-label">Statistika</div>
+    </button>
+    <button class="bni" onclick="toggleMenu(true)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <div class="bni-label">Menyu</div>
+    </button>
+  </nav>
+
+  <!-- MOBILE MORE MENU -->
+  <div class="modal-bg" id="mob-menu-bg" onclick="toggleMenu(false)">
+    <div class="modal mob-menu" onclick="event.stopPropagation()">
+      <div class="m-title">Barcha bo'limlar</div>
+      <div class="mob-menu-grid">
+        <div class="m-item" onclick="go('mywords');toggleMenu(false)">
+          <div class="m-item-icon"><img src="/img/emojis/1f4da.png" class="apple-emoji" alt="📚"></div>
+          <div class="m-item-label">So'zlarim</div>
+        </div>
+
+        <div class="m-item" onclick="go('profile');toggleMenu(false)">
+          <div class="m-item-icon"><img src="/img/emojis/1f464.png" class="apple-emoji" alt="👤"></div>
+          <div class="m-item-label">Profil</div>
+        </div>
+        <div class="m-item" id="mob-admin" style="display:none" onclick="location.href='/admin'">
+          <div class="m-item-icon"><img src="/img/emojis/1f511.png" class="apple-emoji" alt="🔑"></div>
+          <div class="m-item-label">Admin</div>
+        </div>
+      </div>
+      <button class="btn btn-ghost" style="width:100%; margin-top:20px" onclick="toggleMenu(false)">Yopish</button>
+    </div>
+  </div>
+
+  <main class="main">
+    <!-- DASHBOARD -->
+    <div class="page on" id="p-dash">
+      <div class="ph">
+        <div class="ph-greeting" id="ph-greeting">Xush kelibsiz <img src="/img/emojis/1f44b.png" class="apple-emoji" alt="👋"></div>
+        <div class="ph-title">Bugungi Natijangiz</div>
+        <div class="ph-sub" id="ph-date"></div>
+      </div>
+      <div class="progress-banner" id="progress-banner">
+        <div>
+          <div class="pb-title">Jami So'zlar</div>
+          <div class="pb-val" id="pb-score">0</div>
+          <div class="pb-sub">so'z o'rganilmoqda</div>
+        </div>
+        <div class="pb-circle">
+          <svg viewBox="0 0 86 86">
+            <circle cx="43" cy="43" r="36" fill="none" stroke="rgba(124,92,252,.15)" stroke-width="6"/>
+            <circle cx="43" cy="43" r="36" fill="none" stroke="url(#grad-arc)" stroke-width="6" stroke-linecap="round" stroke-dasharray="226" id="pb-arc" stroke-dashoffset="226"/>
+            <defs><linearGradient id="grad-arc" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#7c5cfc"/><stop offset="100%" stop-color="#00d4ff"/></linearGradient></defs>
+          </svg>
+          <div class="pb-circle-num" id="pb-pct">0%</div>
+        </div>
+      </div>
+      
+      <div id="daily-quests" style="margin-top:20px;background:var(--bg2);border:1px solid var(--bd);border-radius:20px;padding:20px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px">
+          <div style="font-weight:800;font-size:16px;color:var(--tx);display:flex;align-items:center;gap:10px">
+            Kundalik Vazifalar
+            <button onclick="openEditGoals()" class="btn-icon-mini" title="Maqsadlarni tahrirlash">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
+            </button>
+          </div>
+          <div style="font-size:12px;color:var(--p);font-weight:600">Bugun: <span id="quest-date"></span></div>
+        </div>
+        <div id="quests-list" style="display:grid;gap:12px"></div>
+      </div>
+
+      <div id="due-wrap"></div>
+      <div class="stat-grid" id="stat-grid"></div>
+      <div class="divider">
+        <div class="section-header">
+          <div class="sec-title2">Bosqichlar bo'yicha</div>
+          <div class="sec-link" onclick="go('learn')">O'rganish →</div>
+        </div>
+        <div class="box-dash" id="box-dash"></div>
+      </div>
+      <!-- NEW FEATURES SECTION removed -->
+    </div>
+
+    <!-- ADD -->
+    <div class="page" id="p-add">
+      <div class="ph">
+        <div class="ph-title">So'z Qo'shish</div>
+        <div class="ph-sub">Inglizcha → O'zbekcha</div>
+      </div>
+      <div style="max-width:600px">
+        <div class="add-tabs">
+          <button class="add-tab on" onclick="addTab('bulk')">Ko'plab (max 300)</button>
+          <button class="add-tab" onclick="addTab('single')">Bitta qo'shish</button>
+          <button class="add-tab" onclick="addTab('decks')">Tayyor To'plamlar <span style="background:var(--p);color:#fff;font-size:9px;padding:2px 4px;border-radius:4px;margin-left:4px">YANGI</span></button>
+        </div>
+        <div id="bulk-a">
+          <div class="hint"><strong>Format:</strong> <code>inglizcha - o'zbekcha</code> yoki <code>inglizcha-o'zbekcha</code><br><code>hello - salom</code> &nbsp; <code>run-yugurmoq</code> &nbsp; <code>jump - sakramoq</code></div>
+          <textarea class="textarea" id="bulk-inp" placeholder="hello - salom&#10;run - yugurmoq&#10;apple - olma&#10;study - o'qimoq"></textarea>
+          <div class="row-bw">
+            <span style="font-size:12px;color:var(--tx3);font-weight:600" id="bulk-cnt">0 ta juft</span>
+            <button class="btn btn-blue" onclick="doBulk()" id="bulk-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Qo'shish
+            </button>
+          </div>
+          <div id="bulk-res"></div>
+        </div>
+        <div id="single-a" style="display:none">
+          <div class="fld"><label class="lbl">Inglizcha</label><input class="inp" type="text" id="s-en" placeholder="hello" autocomplete="off"/></div>
+          <div class="fld" style="margin-top:14px"><label class="lbl">O'zbekcha</label><input class="inp" type="text" id="s-uz" placeholder="salom" autocomplete="off"/></div>
+          <button class="btn btn-blue" onclick="doSingle()" id="single-btn" style="margin-top:16px;width:100%">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Qo'shish
+          </button>
+          <div id="single-res"></div>
+        </div>
+
+        <div id="decks-a" style="display:none">
+          <div class="hint">Professionallar tomonidan tuzilgan tayyor lug'at to'plamlarini bir marta bosish orqali qo'shib oling.</div>
+          <div id="decks-list" style="display:grid;gap:12px;margin-top:16px">
+            <div style="text-align:center;padding:20px"><div class="spin" style="margin:0 auto"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MY WORDS -->
+    <div class="page" id="p-mywords">
+      <div class="ph">
+        <div class="ph-title">So'zlarim</div>
+        <div class="ph-sub">Barcha qo'shilgan so'zlar</div>
+      </div>
+      <div class="toolbar">
+        <div class="srch">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input class="inp" id="w-s" placeholder="Qidirish..." oninput="loadWords()" style="padding-left:38px"/>
+        </div>
+        <select class="sel" id="w-b" onchange="loadWords()"><option value="">Hammasi</option><option value="0">Yangi</option><option value="1">1-bosqich</option><option value="2">2-bosqich</option><option value="3">3-bosqich</option><option value="4">4-bosqich</option><option value="5">O'rganildi</option></select>
+        <select class="sel" id="w-o" onchange="loadWords()"><option value="date">Sana</option><option value="box">Bosqich</option></select>
+        <button class="btn btn-ghost" onclick="exportWords()" title="Eksport" style="padding:10px 14px">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </button>
+        <button class="btn btn-danger" onclick="clearAllWords()" title="Hammasini o'chirish" style="padding:10px 14px">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg>
+        </button>
+      </div>
+      <div id="wlist" class="wlist"></div>
+    </div>
+
+    <!-- LEARN -->
+    <div class="page" id="p-learn">
+      <div class="ph">
+        <div class="ph-title">O'rganish</div>
+        <div class="ph-sub">Bosqich tanlang</div>
+      </div>
+      <div id="p-boxes" class="box-grid"></div>
+      <div id="p-inner" style="display:none">
+        <div class="back-row">
+          <button class="btn btn-ghost" style="padding:9px 18px" onclick="backToBoxes()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            Orqaga
+          </button>
+          <div>
+            <div style="font-size:18px;font-weight:800;color:var(--tx);letter-spacing:-.3px" id="inner-t"></div>
+            <div style="font-size:12px;color:var(--tx3)" id="inner-s"></div>
+          </div>
+        </div>
+        <div class="test-btns" id="test-btns">
+          <button class="btn btn-blue" id="btn-w" onclick="startTest('write')"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg> Yozish Testi</button>
+          <button class="btn btn-qz" id="btn-q" onclick="startTest('quiz')"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg> Quiz Test</button>
+        </div>
+        <div id="test-a" style="display:none">
+          <div class="twrap">
+            <div class="tcard">
+              <div class="prog"><div class="prog-f" id="t-prog" style="width:0%"></div></div>
+              <div class="t-meta" id="t-meta"></div>
+              <div class="t-prompt" id="t-prompt"></div>
+              <div class="t-hint" id="t-hint"></div>
+              <div id="t-write">
+                <input class="t-inp" id="t-inp" placeholder="Inglizcha so'zini yozing..." onkeydown="tKey(event)" autocomplete="off" spellcheck="false"/>
+                <button class="btn btn-blue" onclick="checkWrite()" style="width:100%;margin-top:12px" id="t-check-btn">Tekshirish ↵</button>
+              </div>
+              <div id="t-quiz" style="display:none"><div class="qgrid" id="t-opts"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page" id="p-stats">
+      <div class="ph">
+        <div class="ph-title">Liderlar Jadvali</div>
+        <div class="ph-sub">O'z bilimingizni boshqalar bilan solishtiring</div>
+      </div>
+      
+      <div class="stats-tabs">
+        <button class="stats-tab on" id="st-all" onclick="loadLeaderboard('alltime')">Barchasi</button>
+        <button class="stats-tab" id="st-mon" onclick="loadLeaderboard('monthly')">Shu oy</button>
+        <button class="stats-tab" id="st-dai" onclick="loadLeaderboard('daily')">Bugun</button>
+      </div>
+
+      <div class="leader-top" id="leader-top">
+        <!-- Top 3 winners here -->
+      </div>
+
+      <div class="leader-list" id="leader-list">
+        <!-- Other players here -->
+      </div>
+    </div>
+    
+
+    <!-- SUPER MEMORY -->
+    <div class="page" id="p-profile">
+      <div class="ph">
+        <div class="ph-title">Profile</div>
+        <div class="ph-sub">Personal info & settings</div>
+      </div>
+      
+      <div class="pf-dashboard">
+        <div class="pf-sidebar">
+          <div class="pf-card-modern">
+            <div class="pf-cover"></div>
+            <div class="pf-top">
+              <div class="profile-av" id="pf-av" onclick="document.getElementById('av-input').click()" style="cursor:pointer;position:relative" title="Upload Photo">
+                <div id="pf-av-content"></div>
+                <div style="position:absolute;bottom:-4px;right:-4px;background:var(--p);width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--bg2)">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                </div>
+              </div>
+              <input type="file" id="av-input" style="display:none" accept="image/*" onchange="uploadAvatar(this)"/>
+            </div>
+            <div class="pf-info">
+              <div class="pf-name-lg" id="pf-name"></div>
+              <div class="pf-email-sm" id="pf-email"></div>
+              <div class="pf-badge-modern" id="pf-level-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                Level: 1 Student
+              </div>
+            </div>
+            
+            <div class="pf-actions">
+              <button class="btn btn-qz" onclick="openEditName()" style="width:100%;justify-content:center">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg> Ismni tahrirlash
+              </button>
+              <button class="btn btn-qz" onclick="document.getElementById('av-input').click()" style="width:100%;justify-content:center">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg> Rasm yuklash
+              </button>
+              <button class="btn btn-qz" onclick="openChangePassword()" style="width:100%;justify-content:center">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Parolni o'zgartirish
+              </button>
+              <button class="btn btn-danger" onclick="doLogout()" style="width:100%;justify-content:center;margin-top:8px">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg> Chiqish
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pf-main">
+          <div class="ph-title" style="font-size:18px;margin-bottom:16px">Quick Stats</div>
+          <div class="pf-stats-grid">
+            <div class="pf-stat-card">
+              <div class="pf-stat-icon"><img src="/img/emojis/1f680.png" class="apple-emoji" alt="🚀"></div>
+              <div class="pf-stat-info">
+                <div class="pf-stat-v" id="pf-total">0</div>
+                <div class="pf-stat-l">Total XP</div>
+              </div>
+            </div>
+            <div class="pf-stat-card">
+              <div class="pf-stat-icon"><img src="/img/emojis/2705.png" class="apple-emoji" alt="✅"></div>
+              <div class="pf-stat-info">
+                <div class="pf-stat-v" id="pf-mastered">0</div>
+                <div class="pf-stat-l">Mastered</div>
+              </div>
+            </div>
+            <div class="pf-stat-card">
+              <div class="pf-stat-icon"><img src="/img/emojis/1f525.png" class="apple-emoji" alt="🔥"></div>
+              <div class="pf-stat-info">
+                <div class="pf-stat-v" id="pf-streak-n">0</div>
+                <div class="pf-stat-l">Streak</div>
+                <div style="display:none" id="pf-streak"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div style="margin-top:30px">
+            <div class="ph-title" style="font-size:18px">My Achievements</div>
+            <div class="ach-grid" id="ach-grid"></div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- end p-profile -->
+
+    <!-- ═══ AI CHAT (BrainBot) ═══ -->
+    <div class="page" id="p-aichat">
+      <div class="ph">
+        <div class="ph-title" style="display:flex;align-items:center;gap:10px"><img src="/img/emojis/1f916.png" class="apple-emoji" style="width:28px;height:28px" alt="🤖"> BrainBot</div>
+        <div class="ph-sub">AI yordamchi — ingliz tilini o'rganing</div>
+      </div>
+
+      <div class="chat-layout">
+        <!-- Sessions sidebar -->
+        <div class="chat-sessions" id="chat-sessions">
+          <button class="btn btn-blue" style="width:100%;margin-bottom:12px" onclick="newChatSession()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Yangi suhbat
+          </button>
+          <div id="chat-session-list"></div>
+        </div>
+
+        <!-- Chat area -->
+        <div class="chat-area">
+          <div class="chat-messages" id="chat-messages">
+            <div class="chat-welcome">
+              <div style="font-size:48px;margin-bottom:16px"><img src="/img/emojis/1f916.png" class="apple-emoji" style="width:56px;height:56px" alt="🤖"></div>
+              <div style="font-size:20px;font-weight:800;color:var(--tx);margin-bottom:8px">Salom! Men BrainBot</div>
+              <div style="font-size:14px;color:var(--tx3);line-height:1.6;max-width:400px">Ingliz tilini o'rganishda sizga yordam beraman. Grammatika, so'z ishlatish, gap tuzish — istalgan savolingizni bering!</div>
+              <div class="chat-suggestions" style="margin-top:20px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
+                <button class="chat-suggest-btn" onclick="sendChatFromSuggest('Hello va Hi ning farqi nimada?')">Hello va Hi farqi</button>
+                <button class="chat-suggest-btn" onclick="sendChatFromSuggest('Present Perfect tense qachon ishlatiladi?')">Present Perfect</button>
+                <button class="chat-suggest-btn" onclick="sendChatFromSuggest('accomplish so\'zini gap ichida ishlating')">So'z bilan gap</button>
+              </div>
+            </div>
+          </div>
+          <div class="chat-input-area">
+            <div class="chat-input-wrap">
+              <input type="text" class="chat-input" id="chat-input" placeholder="Xabar yozing..." onkeydown="if(event.key==='Enter')sendChat()" autocomplete="off">
+              <button class="chat-send-btn" id="chat-send-btn" onclick="sendChat()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SENTENCE BUILDER ═══ -->
+    <div class="page" id="p-sentences">
+      <div class="ph">
+        <div class="ph-title" style="display:flex;align-items:center;gap:10px"><img src="/img/emojis/270d-fe0f.png" class="apple-emoji" style="width:28px;height:28px" alt="✍"> Gap Tuzish</div>
+        <div class="ph-sub">So'zlarni gap ichida ishlatib o'rganing</div>
+      </div>
+
+      <!-- Stats row -->
+      <div class="sent-stats" id="sent-stats">
+        <div class="sent-stat"><div class="sent-stat-v" id="ss-due">0</div><div class="sent-stat-l">Bugun</div></div>
+        <div class="sent-stat"><div class="sent-stat-v" id="ss-done">0</div><div class="sent-stat-l">Bajarildi</div></div>
+        <div class="sent-stat"><div class="sent-stat-v" id="ss-total">0</div><div class="sent-stat-l">Jami</div></div>
+      </div>
+
+      <!-- Sentence card -->
+      <div id="sent-card-area">
+        <div class="sent-empty" id="sent-empty">
+          <div style="font-size:48px;margin-bottom:16px"><img src="/img/emojis/270d-fe0f.png" class="apple-emoji" style="width:56px;height:56px" alt="✍"></div>
+          <div style="font-size:18px;font-weight:800;color:var(--tx);margin-bottom:8px">Gap tuzish mashqi</div>
+          <div style="font-size:14px;color:var(--tx3);line-height:1.6;max-width:400px;margin-bottom:20px">So'zlaringiz bilan gap tuzing — AI tekshiradi va fikr bildiradi</div>
+          <button class="btn btn-blue" onclick="loadSentenceTask()">Boshlash →</button>
+        </div>
+        <div id="sent-card" style="display:none">
+          <div class="tcard" style="max-width:600px">
+            <div class="sent-word-banner" id="sent-word-banner">
+              <div class="sent-word" id="sent-word"></div>
+              <div class="sent-trans" id="sent-trans"></div>
+              <div class="sent-box-badge" id="sent-box-badge"></div>
+            </div>
+            <div style="margin-top:20px">
+              <label class="lbl">Bu so'z bilan gap tuzing:</label>
+              <textarea class="textarea" id="sent-input" rows="3" placeholder="Masalan: I want to accomplish my goals this year."></textarea>
+            </div>
+            <div id="sent-feedback" style="display:none;margin-top:16px"></div>
+            <div style="display:flex;gap:12px;margin-top:16px">
+              <button class="btn btn-blue" id="sent-check-btn" onclick="checkSentence()" style="flex:1">AI tekshirish ✓</button>
+              <button class="btn btn-ghost" onclick="skipSentence()">Keyingisi →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SUPER MEMORY (Mnemonika) ═══ -->
+    <div class="page" id="p-supermemory">
+      <div class="ph">
+        <div class="ph-title" style="display:flex;align-items:center;gap:10px"><img src="/img/emojis/1f9d9.png" class="apple-emoji" style="width:28px;height:28px" alt="🧙"> Super Memory</div>
+        <div class="ph-sub">Mnemonika usuli bilan so'zlarni oson eslab qoling</div>
+      </div>
+
+      <div class="sm-intro" id="sm-intro">
+        <div class="sm-hero-card">
+          <div style="font-size:48px;margin-bottom:16px"><img src="/img/emojis/1f9d9.png" class="apple-emoji" style="width:64px;height:64px" alt="🧙"></div>
+          <h3 style="color:var(--tx);font-size:22px;font-weight:800;margin:0 0 8px">Keyword Method</h3>
+          <p style="color:var(--tx3);font-size:14px;line-height:1.6;max-width:440px;margin:0 auto 20px">AI sizning so'zlaringiz uchun maxsus mnemonika hikoyalari yaratadi. So'zni o'zbek tilidagi o'xshash tovushga bog'lab, tasavvur qilish orqali eslab qolasiz.</p>
+          <button class="btn btn-blue" onclick="loadMnemonic()" style="padding:14px 32px">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            Mnemonika yaratish
+          </button>
+        </div>
+      </div>
+
+      <div id="sm-card" style="display:none">
+        <div class="tcard" style="max-width:600px">
+          <div class="sm-word-row">
+            <div>
+              <div class="sm-word" id="sm-word"></div>
+              <div class="sm-trans" id="sm-trans"></div>
+            </div>
+            <div class="sm-box-badge" id="sm-box-badge"></div>
+          </div>
+          <div id="sm-content" class="sm-content">AI yaratmoqda...</div>
+          <div style="display:flex;gap:12px;margin-top:20px">
+            <button class="btn btn-blue" onclick="loadMnemonic()" style="flex:1">Keyingi so'z →</button>
+            <button class="btn btn-ghost" onclick="E('sm-card').style.display='none';E('sm-intro').style.display=''">Orqaga</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- Modal -->
+<div class="modal-bg" id="modal">
+  <div class="modal">
+    <div class="m-title" id="m-title"></div>
+    <div id="m-body"></div>
+    <div class="m-acts" id="m-acts"></div>
+  </div>
+</div>
+
+<div class="modal-bg" id="crop-modal">
+  <div class="modal" style="max-width:440px;width:95%;padding:0;overflow:hidden;border-radius:24px;background:var(--bg)">
+    <div style="padding:20px 24px;border-bottom:1px solid var(--bd2)"><div style="font-weight:800;font-size:16px;color:var(--tx)">Rasmni sozlash</div></div>
+    <div style="width:100%;height:350px;background:#000;overflow:hidden">
+      <img id="crop-img" src="" style="max-width:100%">
+    </div>
+    <div style="padding:20px 24px;display:flex;gap:12px">
+      <button class="btn btn-ghost" style="flex:1" onclick="closeCrop()">Bekor qilish</button>
+      <button class="btn btn-blue" style="flex:1" onclick="applyCrop()">Saqlash</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Toast -->
+<div class="toast" id="toast">
+  <div class="t-ico" id="t-ico"></div>
+  <div><div class="t-ttl" id="t-ttl"></div><div class="t-msg" id="t-msg"></div></div>
+</div>
+
+<!-- Loader -->
+<div class="ov" id="ov"><div class="spin-big"></div></div>
+
+<!-- Modal Edit Name -->
+<div class="modal-bg" id="modal-name">
+  <div class="modal" style="max-width:340px">
+    <div class="modal-head" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px">
+      <div style="font-size:17px;font-weight:800;color:var(--tx)">Ismni tahrirlash</div>
+      <div style="cursor:pointer;font-size:24px;color:var(--tx3)" onclick="E('modal-name').classList.remove('open')">×</div>
+    </div>
+    <div style="margin-bottom:15px">
+      <div style="font-size:12px;color:var(--tx3);margin-bottom:6px;font-weight:600">Ism va familiya</div>
+      <input type="text" class="modal-input" id="en-name" placeholder="Masalan: Aziz Rahimov" style="width:100%;background:var(--bg3);border:1.5px solid var(--bd);border-radius:12px;padding:12px;color:var(--tx);font-family:inherit">
+    </div>
+    <div id="en-err" style="color:#ff4d6d;font-size:12px;margin-bottom:10px;font-weight:600"></div>
+    <button class="btn btn-qz" style="width:100%;justify-content:center" id="en-btn" onclick="doUpdateName()">Saqlash</button>
+  </div>
+</div>
+<!-- Modal Edit Goals -->
+<div class="modal-bg" id="modal-goals">
+  <div class="modal" style="max-width:340px">
+    <div class="modal-head" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px">
+      <div style="font-size:17px;font-weight:800;color:var(--tx)">Maqsadlarni belgilash</div>
+      <div style="cursor:pointer;font-size:24px;color:var(--tx3)" onclick="E('modal-goals').classList.remove('open')">×</div>
+    </div>
+    <div style="margin-bottom:12px">
+      <div style="font-size:12px;color:var(--tx3);margin-bottom:6px;font-weight:600">Kunlik so'z takrorlash</div>
+      <input type="number" class="modal-input" id="eg-reviews" style="width:100%;background:var(--bg3);border:1.5px solid var(--bd);border-radius:12px;padding:12px;color:var(--tx);font-family:inherit">
+    </div>
+    <div style="margin-bottom:15px">
+      <div style="font-size:12px;color:var(--tx3);margin-bottom:6px;font-weight:600">Kunlik XP to'plash</div>
+      <input type="number" class="modal-input" id="eg-xp" style="width:100%;background:var(--bg3);border:1.5px solid var(--bd);border-radius:12px;padding:12px;color:var(--tx);font-family:inherit">
+    </div>
+    <div id="eg-err" style="color:#ff4d6d;font-size:12px;margin-bottom:10px;font-weight:600"></div>
+    <button class="btn btn-qz" style="width:100%;justify-content:center" id="eg-btn" onclick="doUpdateGoals()">Saqlash</button>
+  </div>
+</div>
+
+<script src="/js/app.js?v=38"></script>
+</body>
+</html>
